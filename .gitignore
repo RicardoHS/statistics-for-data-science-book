@@ -1,0 +1,6 @@
+*.bbl
+*.blg
+*.aux
+*.bcf
+*.run.xml
+*.pdf
