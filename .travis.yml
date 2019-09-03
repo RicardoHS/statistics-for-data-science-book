@@ -1,6 +1,17 @@
 sudo: required
 language: generic
 services: docker
-
 script:
-  - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic main.tex"
+- docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic
+  main.tex"
+deploy:
+  provider: releases
+  api_key:
+    secure: RLcmq9XwuX5jehLAshS+JKZZ8tY1rv8IBj5pBc3hxIprvCQytkvsK1Q4MkzFLSNbTJRrHxy2xancO5ed6Mmk06cmtGKRzh8AvZDobHmmcunX7lT79HA3QvW+Lr74pC5jXjAYJT92egx44M/6Gznv7Tb7+COmub+wMPvA/FS7r28Yww2m3V+f9LhiwNjJMzDqqVIo6+rNcJUcSMulNlW7GZJU07E+zfw1c6HepR6/flXnQfP7rTTJ+kV5kqtZjX1iI6vJHqPIOkSIfcVauNsgZdy+U4AI0brKq/C4pf7Rd8xx5Nx+4iJzhPz2cfzfOYrY5X4olkjdJqNlsyjiOZarcuxl6lJVrYIsCrkdRq4OKxdr45wvnJVtWXwcHjhlNW+f8XCV1hky7N2msPfwDidYDplBKspetmegnlI5Pz6V1bVxD8WS/GKce6HjiUVxUApgNADfZGT3QNvcPj+m/P6saQo3vu3CQ8et9EW/ox2UPJkqFpjGAOQcsIzWEf9lik0vhBTTlNS9s0radluEk1nN2J3STwINkvl14TURs22N9I0cBf9Zsb7wpNbBXwbwJuLauOso5zIEnWlrvg3moqJJ1KGJ8YKv50S7b3J31W4wdQjyDtVsx2fL+I3okZIbEkV3dEcydF7x+t9ul3KOVKnvad8CcszXtSJJEbH2Tx+0F6M=
+  file:
+   - ./src/example.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
