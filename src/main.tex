@@ -1,11 +1,29 @@
-\documentclass{book} 
+% following this guide 
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+
+\documentclass[12pt]{book} 
 \usepackage{biblatex} 
 \addbibresource{bib/biblatex.bib}
 
-\begin{document} 
+\title{
+{Statistics for Data Science}\\
+%{\includegraphics{university.jpg}}
+}
+\author{Ricardo Hortelano}
+\date{2019}
 
-This is a text and you will see the power of mine
+\begin{document}
+\maketitle
 
-\nocite{*}
+\chapter*{Preface}
+\input{chapters/preface}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\appendix
+\chapter{Appendix}
+\input{chapters/appendix}
+
 \printbibliography
-\end{document} 
+\end{document}
