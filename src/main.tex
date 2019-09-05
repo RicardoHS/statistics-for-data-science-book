@@ -1,11 +1,30 @@
-\documentclass{IEEEtran} 
+% following this guide 
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+
+\documentclass[12pt]{book} 
 \usepackage{biblatex} 
-\addbibresource{biblatex.bib}
+\addbibresource{bib/biblatex.bib}
 
-\begin{document} 
+\title{
+{Statistics for Data Science}\\
+%{\includegraphics{university.jpg}}
+}
+\author{Ricardo Hortelano}
+\date{2019}
 
-This is a text
+\begin{document}
+\maketitle
+\tableofcontents
 
-\nocite{*}
+\chapter*{Preface}
+\input{chapters/preface}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\appendix
+\chapter{Appendix}
+\input{chapters/appendix}
+
 \printbibliography
-\end{document} 
+\end{document}
