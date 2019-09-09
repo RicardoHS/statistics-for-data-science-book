@@ -2,4 +2,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{9}
+\contentsline {chapter}{\numberline {2}Numerical Methods}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Linear Optimization (LO) Models}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{11}

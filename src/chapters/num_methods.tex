@@ -1,0 +1,50 @@
+This chapter will focus on the methods and processes needed to choose the optimal 
+solution given a mathematical model. This chapter also include the processes needed to build these models.\\
+
+This field of study is also know as \textbf{Prescriptive Analysis} or \textbf{Operations Research}.
+
+The schematic way to proceed in this problems is the following:
+\begin{center}
+    Problem Description $\rightarrow$ Model Formulation $\rightarrow$ Analysis \& Algorithms $\rightarrow$
+    Computer Solution $\rightarrow$ Interpretation
+\end{center}
+
+The elements involved in all mathematical decision models are the following:
+\begin{itemize}
+    \item Decision Variables: Are the ones we want to know his optimal value. (e.g. number of products to 
+    build in a period of time)
+    \begin{center}
+        $x = (x_1, x_2, \dots , x_n)$
+    \end{center}
+    \item Objective Function: Is the one that model the problem. It will be always needed to \textit{maximize} or \textit{minimize} it.
+    \begin{center}
+        $\max f(x)$ or $\min f(x)$
+    \end{center}
+    \item Constraints: Are the limitations to the objective function. It could be given by definition or been deducted by the data. 
+    \begin{center}
+        $g_1(x)\leq b_1$, $\qquad g_2(x)\geq b_2$, $\qquad b_3=b_3$
+    \end{center}
+\end{itemize}
+
+The main goal to a correct model building is to identify these three elements and define it in a proper way. Contrary that the logic 
+intuition could make us think, simplest models are better than complex one with lot of constraints and elaborated objective functions. \\
+
+\textbf{All models are wrong, but some are useful} (? citation)\\
+
+Why use this models? Because most of the times the time and memory computational complexity to resolve some problems in a brute force
+or in a non analytical way is way greater than the models developed using this approach.
+
+\section{Linear Optimization (LO) Models}
+Most important type of decision optimization models. Is the foundation to understand the complex ones. Also is one of the most widely
+applied models because of his plainness.\\
+
+Limitations:
+\begin{itemize}
+    \item Decision variables needs to be continuous.
+    \begin{center}
+        $x = (x_1, x_2, \ddots , x_n) \in \mathbb{R}$
+    \end{center}
+    \item Objective function needs to be linear in $x$
+    \item Constraints needs to be linear in $x$
+\end{itemize}
+
