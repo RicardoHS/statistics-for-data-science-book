@@ -2,4 +2,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{9}
+\contentsline {chapter}{\numberline {2}Probability}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Random Experiments}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Set Operations}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Set Algebra}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Probability}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Axioms}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Properties}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}LaPlace's Rule}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Conditional Probability}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}Bayes Formula}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Multiplication Rule}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Total Probability Rule}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.6}Independency of two events}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Conditional Independece}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.7}Combinatory Logic}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{15}
