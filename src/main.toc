@@ -4,34 +4,52 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Probability}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Random Experiments}{9}
+\contentsline {section}{\numberline {2.1}Set Theory}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Set Operations}{10}
+\contentsline {subsection}{\numberline {2.1.1}Notation}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Set Algebra}{10}
+\contentsline {subsection}{\numberline {2.1.2}Binary Operations}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Properties}{10}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Probability}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Axioms}{11}
+\contentsline {subsection}{\numberline {2.2.1}Random Experiments}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Properties}{12}
+\contentsline {subsection}{\numberline {2.2.2}Events Operations}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}LaPlace's Rule}{12}
+\contentsline {subsection}{\numberline {2.2.3}Formal Definitions}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}Conditional Probability}{12}
+\contentsline {subsubsection}{$\sigma $-algebra}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Properties}{12}
+\contentsline {subsubsection}{$\sigma $-algebra discrete}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Bayes Formula}{12}
+\contentsline {subsubsection}{Measurable Space}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Multiplication Rule}{12}
+\contentsline {subsubsection}{Frequentist Definition}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Total Probability Rule}{12}
+\contentsline {subsubsection}{LaPlace's Definition}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.6}Independency of two events}{12}
+\contentsline {subsubsection}{Kolmogorov Definition}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Conditional Independece}{13}
+\contentsline {subsubsection}{Cox's Theorem}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.7}Combinatory Logic}{13}
+\contentsline {subsection}{\numberline {2.2.4}Properties}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{15}
+\contentsline {subsection}{\numberline {2.2.5}Conditional Probability}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.6}Bayes Formula}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Multiplication Rule}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Total Probability Rule}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.7}Independency of two events}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Conditional Independece}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.8}Combinatory Logic}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{17}

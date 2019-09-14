@@ -1,97 +1,169 @@
 This chapter will focus on the main probabilistic knowledge necessary to have a strong mathematical base. One of the key thing to know about
 probabilities is that all the theory is builded from the set theory. Because of that the very first points to take into account will be the
-fundamental set aspects. After that the chapter will go inside little by little into the probabilistic theory.
+fundamental set aspects. After that the chapter will go inside into the probabilistic theory.
 
-\section{Random Experiments}
+\section{Set Theory}
+Informally, a set can be defined as a collection of objects. The formally definition of what it's a set vary depending of the axiomatic definition
+of choice. Because set theory is not into the aim of this book and because sets can be studied intuitively, we are going to refer to it in his more 
+fundamental form. Venn diagrams can be used to understand graphically most of the properties of sets.
+
+\subsection{Notation}
+If an object $o$ is an element of a set $A$, then we can write $o \in A$. A set and his elements can be denoted by
+\begin{center}
+    $A = \{o_1, o_2, \dots , o_n\}$ where $n$ can be \textit{finite} or \textit{infinite}
+\end{center}
+If all elements of a set $B$ are also member of a set $A$ then we can say that $B$ is a subset of $A$ and it's denoted by $B \subset A$ or $B \subseteq A$ 
+if $A$ and $B$ has exactly the same elements.\\
+Sometimes a especial set $U$ is used to refer the set that contains all possible objects.
+
+\subsection{Binary Operations}
+Set theory defines a group of operations that can be performed between two sets. Some of them are:
+\begin{itemize}
+    \item \textbf{Union} of $A$ and $B$, denoted $A \cup B$, is the set of all objects that are a member of $A$, or $B$, or both.
+    \item \textbf{Intersection} of $A$ and $B$, denoted $A \cap B$, is the set of all objects that are members of both $A$ and $B$.
+    \item \textbf{Complement} of $A$ refers to elements not contained in $A$. Denoted $\overline{A}$ or $A^c$
+    \item \textbf{Difference} of $A$ and $B$, denoted $A \setminus B$, is the set of all members of $A$ that are not members of $B$
+    \item \textbf{Power} of $A$, denoted $\mathcal{P}(A)$, is the set whose members are all of the possible subsets of $A$. 
+\end{itemize}
+
+\subsection{Properties}
+Derived from above there is some general properties called the \textbf{fundamental properties of set algebra}. These properties 
+are essential to understand the set theory. In fact, if the set theory is completely understand, these properties are automatically 
+assimilated. Thus it's not necessary to memorize it. 
+\begin{itemize}
+   \item Commutative: 
+   \begin{itemize}
+        \item[] $A \cup B = B \cup A$
+        \item[] $A \cap B = B \cap A$
+   \end{itemize}
+   \item Associative: 
+   \begin{itemize}
+        \item[] $(A \cup B) \cup C = A \cup (B \cup C)$
+        \item[] $(A \cap B) \cap C = A \cap (B \cap C)$
+   \end{itemize}
+   \item Distributive:
+   \begin{itemize}
+        \item[] Union with Intersection: $(A \cap B)\cup C = (A\cup C) \cap (B \cup C) $
+        \item[] Intersection with Union: $(A \cup B)\cap C = (A\cap C) \cup (B \cup C) $
+   \end{itemize}   
+   \item Neutral Element: $A \cup \emptyset = A = A \cap S$
+   \item Complementation: $A \cup \overline{A} = S$ and $A\cap \overline{A} = \emptyset$
+   \item Idempotence: $A \cup A = A$ and $A \cap A = A$
+   \item Abosortion: $A \cup S = S$ and $A \cap \emptyset = \emptyset$
+   \item Simplication: $A \cap (A \cup B) = A = A \cup (A \cap B)$
+\end{itemize}
+
+\textbf{De Morgan's laws}
+\begin{itemize}
+   \item $\overline{A \cup B} = \overline{A} \cap \overline{B}$
+   \item $\overline{A \cap B} = \overline{A} \cup \overline{B}$
+\end{itemize}
+
+\section{Probability}
+
+\subsection{Random Experiments}
  A experiment is deterministic when knowing the state of the set of variables involved in the experiment the outcome is always the same.
  Conversely a experiment is random when knowing the state (or when we ignore some of these states) of the set of variables involved in
  the experiment the outcome differs. \\
  
- In other terms, \textbf{an experiment is random} if although it is repeated in the same manner every time, can result in different outcomes.
+ In other terms, \textbf{an experiment is random} if although it is repeated in the same manner every time, can result in different outcomes. 
+ Thus, the fixed outcome of a random experiment is impossible to predict in advance although the number of individual possibles outcomes is known in 
+ advance.
  The probability theory study the random experiments.\\
 
- The elements always involved in a random experiment are the followings:
+ The notation of some elements involved in a random experiment are the followings:
  \begin{itemize}
-     \item \textbf{Sample Space}, is the set of all possible outcomes of the random experiment. It's denoted by $S$
-     \item \textbf{Event}, is a subset of $S$. Any possible outcome of the random experiment. 
+     \item \textbf{Sample Space}, is the set of all possible outcomes of the random experiment. It's denoted by $S$ or $\Omega$
+     \item \textbf{Individual Outcomes}, are the type of possible outcomes of a random experiment. It's denoted by $\omega$
+     \item \textbf{Event}, is a subset of $S$. Usually denoted by capital letters starting by $A$, $B$, $C$, etc. 
+        Sometimes denoted by $\mathcal{F}$ for his general form. 
      \item \textbf{Null Event}, is a special event that never occurs. Denoted by $\emptyset$
+     \item \textbf{Frequency} of $\omega$ is the number of times the individual outcome $\omega$ occurs in a random experiment.
+     \item \textbf{Relative Frequency} of $\omega$ is the ratio between the frequency of $\omega$ and the total number of outcomes of a random experiment.
  \end{itemize}
 
- \subsection{Set Operations}
- Also there is a set of \textbf{operations}:
- \begin{itemize}
-     \item \textbf{Union}, occurs when either of the two events (or both of them simultaneously) do occur. Denoted $A \cup B$ (Grammatically $A$ or $B$)
-     \item \textbf{Intersection}, occurs when both of them do simultaneously occur. Denoted $A \cap B$ (Grammatically $A$ and $B$)
-     \item \textbf{Complementary}, occurs when the event does not occur. Denoted $\overline{A}$ (Grammatically not $A$)
-     \item \textbf{Difference}, occurs when the first event does occurs, but the second does not. Denoted $A \setminus B$ (Grammatically $A$ and not $B$).
-        Note that $A \setminus B = A \cap \overline{B}$
- \end{itemize}
+ Once the experiment has been performed, it is said that $A$ “happened” if the outcome of the experiment ( $\omega$ ) belongs to $A$. 
 
-\subsection{Set Algebra}
-Derived from above there is some general properties.
+ \subsection{Events Operations}
+If the logical meaning from the set operations is taken and restricted to a probabilistic perspective, then a new meaning for these operations can be defined
+in this new scope. Thus:
 \begin{itemize}
-    \item Commutative
-    \item Associative
-    \item Neutral Element
-    \item Complementation
-    \item Idempotence
-    \item Abosortion
-    \item Simplication
+    \item \textbf{Union} $A \cup B$ (Grammatically $A$ or $B$), occurs when either of the two events (or both of them simultaneously) do occur.
+    \item \textbf{Intersection} $A \cap B$ (Grammatically $A$ and $B$), occurs when both of them do simultaneously occur.
+    \item \textbf{Complementary} $\overline{A}$ (Grammatically not $A$), occurs when the event does not occur.
+    \item \textbf{Difference} $A \setminus B$ (Grammatically $A$ and not $B$), occurs when the first event does occurs, but the second does not. 
+                Note that $A \setminus B = A \cap \overline{B}$
 \end{itemize}
 
-And also some distributive laws
+\subsection{Formal Definitions}
+From an formal perspective, the concept of probability has been defined multiples times. Here they are collected the fundamental ones that tries
+to formalize the abstract concepts of what it's usually understand as probability and his parts.
+
+\subsubsection{$\sigma$-algebra}
+A $\sigma$-algebra (sigma-algebra) $\mathcal{A}$ over a set $\Omega$ is a family (collection) of subsets (with elements $E_1, E_2, \dots$) of $\Omega$ that satisfies:
 \begin{itemize}
-    \item Union with Intersection, $(A \cap B)\cup C = (A\cup C) \cap (B \cup C) $
-    \item Intersection with Union, $(A \cup B)\cap C = (A\cap C) \cup (B \cup C) $
+    \item $\emptyset \in \mathcal{A}$
+    \item If $E \in \mathcal{A}$ then $\overline{E} \in \mathcal{A}$
+    \item If $E_1, E_2, \dots \in \mathcal{A}$ then $\cup_{n=1}^{\infty}E_i \in \mathcal{A}$ 
+\end{itemize} 
+
+\subsubsection{$\sigma$-algebra discrete} 
+The discrete $\sigma$-algebra of $\Omega$ is the power set of $\Omega$ ($\mathcal{P}(\Omega)=\{E : E \subset \Omega\}$), that is, the collection
+of all subsets of $\Omega$.\\
+
+\textbf{For example,} given a random experiment that toss one coin,
+\begin{itemize}
+    \item[] $H$: The coin shows head.
+    \item[] $T$: The coin shows tail. 
+    \item[] $S = \{H, T\},\;\;\; \mathcal{P}(S)=\{\emptyset, \{H\}, \{T\}, S\}$
 \end{itemize}
 
-De Morgan's laws
+\subsubsection{Measurable Space}
+The pair $(\Omega, \mathcal{A})$ is a measurable space if $\mathcal{A}$ is a $\sigma$-algebra over $\Omega$
+
+\subsubsection{Frequentist Definition}
+The probability of an event $A$ is the limit of the relative frequency of that event when the number of repetitions of the experiment tends to infinity.
+If the experiment is repeated $n$ times, and $n_A$ is the number of repetitions in which $A$ happens, then the probability of $A$ is
+\[ P(A) = \lim_{n \rightarrow \infty} \frac{n_A}{n} \] 
+
+\subsubsection{LaPlace's Definition}
+This definition can be used for random experiments that have a finite number of outcomes and all of them are equally likely.\\
+The probability of an event $A$ is the ratio between the favorable outcomes to $A$ and the total outcomes of the experiment, thus,
+\[  P(A) = \frac{\#A}{\#\Omega}  \]
+
+\subsubsection{Kolmogorov Definition}
+The Kolmogorov definition is the only one that does not define what is a probability function. In fact, this definition stablish three axioms that must be
+satisfied by any probability function. This axioms are a fundamental part of probability theory.\\
+Let the pair $(\Omega, \mathcal{A})$ be a \textit{measurable space}. In it, the probability function $P$ of some event $E$, denoted $P(E)$ is an application
+over the real numbers ($P: \mathcal{A} \rightarrow \mathbb{R}$) that satisfies:
+
 \begin{itemize}
-    \item $\overline{A \cup B} = \overline{A} \cap \overline{B}$
-    \item $\overline{A \cap B} = \overline{A} \cup \overline{B}$
+    \item \textbf{Non Negativity}: $P(E) \geq 0, \forall E \in \mathcal{A}$
+    \item \textbf{Unitarity}: $P(\Omega) = 1$
+    \item \textbf{Additivity}: Any countable sequence $E_1, E_2, \dots$ of disjoint events of $\mathcal{A}$, satisfies
+            \[ P(\bigcup_{n=1} E_i) = \sum_{n=1} P(E_i) \]
 \end{itemize}
 
-\section{Probability}
-A probability $P$ assesses a number to every event $A$ associated with the random experiment. It is interpreted as the likelihood (or chance) that $A$ occurs.
-
-\subsection{Axioms}
-The Kolmogorov axioms are a fundamental part of probability theory defined by Andrey Kolmogorov. In it, the probability $P$ of some event $E$, denoted $P(E)$ 
-is usually defined as to satisfy these axioms. 
-\begin{itemize}
-    \item \textbf{Non Negativity}: $P(A) \geq 0$ for every $A$
-    \item \textbf{Additivity}: Any countable sequence of disjoint sets $A_i$ satisfies $P(\bigcup_{i \in I} A_i) = \sum_{i \in I} P(A_i) $
-    \item \textbf{Normalization}: $P(S)=1$
-\end{itemize}
-
-The structure of the family of events at with a probability is defined is known as $\sigma$-algebra (sigma-algebra).
-A $\sigma$-algebra 
-\begin{enumerate}
-    \item contains the certain event $S$
-    \item is closed under complementation
-    \item is closed under countable unions.
-\end{enumerate}
-
-Write here text about family set explanation
+\subsubsection{Cox's Theorem}
+Used by bayesians. TODO
 
 \subsection{Properties}
 \begin{itemize}
-    \item P
-    \item P
-    \item P
-    \item P
-    \item P
-    \item P
+    \item $P(\overline{A}) = 1 - P(A)$
+    \item $P(\emptyset) = 0$
+    \item If $A \subseteq B$ then $P(A) \leq P(B)$
+    \item $P(A\setminus B) = P(A) - P(A \cap B)$
+    \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+    \item $P(A \cup B \cup C) = P(A \cup (B \cup C)) = P(A) + P(B) + P(C) + P(A\cap B \cap C) - P(A \cap B) - P(A \cap C) - P(B \cap C)$
 \end{itemize}
 
-\subsection{LaPlace's Rule}
-bla bla
-
 \subsection{Conditional Probability}
-\begin{center}
-    $P(A|B) = \frac{P(A\cap B)}{P(B)}$
-\end{center}
+The probability of the event $A$ occurs knowing before hand that the event $B$ has occurred is,
+\[  P(A|B) = \frac{P(A\cap B)}{P(B)} \]
+Note that when we have a conditional probability, it can be say that $B$ becomes the new sample space of the experiment.
 
 \subsubsection{Properties}
+The conditional probability holds all the properties of the normal probability.
 
 \subsection{Bayes Formula}
 One event form $P(A \cap B) = P(A)P(B|A)$\\
@@ -112,4 +184,3 @@ bla blo
 \subsection{Combinatory Logic}
 Also know as expertise in counting \\
 bla bla
-
