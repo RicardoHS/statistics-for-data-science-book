@@ -59,6 +59,26 @@ assimilated. Thus it's not necessary to memorize it.
    \item $\overline{A \cap B} = \overline{A} \cup \overline{B}$
 \end{itemize}
 
+\section{Combinatory}
+Also know as expertise in counting
+
+\subsection{Rule of Product}
+If there are $\alpha$ ways of doing something and $\beta$ ways of doing another thing, then there are $\alpha\beta$ ways of performing both actions.
+
+\subsection{k-permutations}
+\textbf{k-permutations of n elements:}\\
+The number of \textbf{ordered sequences} with $1\leq k \leq n$ that can be formed of $n$ elements is,
+\[ n(n-1)(n-2)\dots(n-k+1) = \frac{n!}{(n-k)!} \]
+
+\subsection{k-combinations}
+\textbf{k-combinations of n objects:}\\
+The number of \textbf{unordered sequences} within a set with $1\leq k \leq n$ that can be formed of $n$ elements is,
+\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
+
+\subsection{Partitions}
+$r$ groups containing $n_i$ objects each,
+\[ \binom{n}{n_1,n_2\dots,n_r} = \frac{n!}{n_1!n_2!\dots n_r!} \]
+
 \section{Probability}
 
 \subsection{Random Experiments}
@@ -131,6 +151,9 @@ This definition can be used for random experiments that have a finite number of 
 The probability of an event $A$ is the ratio between the favorable outcomes to $A$ and the total outcomes of the experiment, thus,
 \[  P(A) = \frac{\#A}{\#\Omega}  \]
 
+This implies that, given,
+\[ S = \{s_1,s_2,\dots\, s_n\},\;\;\; P(s_n)=\frac{1}{n} \]
+
 \subsubsection{Kolmogorov Definition}
 The Kolmogorov definition is the only one that does not define what is a probability function. In fact, this definition stablish three axioms that must be
 satisfied by any probability function. This axioms are a fundamental part of probability theory.\\
@@ -148,6 +171,7 @@ over the real numbers ($P: \mathcal{A} \rightarrow \mathbb{R}$) that satisfies:
 Used by bayesians. TODO
 
 \subsection{Properties}
+These are the properties that apply independency of the probability definition of choice.
 \begin{itemize}
     \item $P(\overline{A}) = 1 - P(A)$
     \item $P(\emptyset) = 0$
@@ -163,24 +187,39 @@ The probability of the event $A$ occurs knowing before hand that the event $B$ h
 Note that when we have a conditional probability, it can be say that $B$ becomes the new sample space of the experiment.
 
 \subsubsection{Properties}
-The conditional probability holds all the properties of the normal probability.
+The conditional probability holds all the properties of the regular probability.
 
-\subsection{Bayes Formula}
-One event form $P(A \cap B) = P(A)P(B|A)$\\
-general form .....
-
-\subsubsection{Multiplication Rule}
-bla bla
+\subsection{Bayes Theorem}
+Given a set of events $A_1, A_2, \dots, A_n$, the probability of all of them occurring simultaneously is called \textbf{probability chain rule}, and it is
+\[ P(A_1\cap A_2 \cap \dots \cap A_n) = P(A_1)P(A_2|A_1)\dots P(A_n|A_1\cap \dots \cap A_{n-1}) = \prod_{k=1}^{n}P(A_k|\bigcap_{j=1}^{k-1}A_j) \]
+or alternatively, in his two events form,
+\[ P(A \cap B) = P(A)P(B|A)\]
 
 \subsubsection{Total Probability Rule}
-bla bla
+Given $A_1,\dots,A_n$ mutually exclusive (disjoint) events whose union is the whole of the sample space (partition) and assume $P(A_i) > 0$ for every $i$ .For every 
+event $B$ we have
+\[ P(B) = P(A_1\cap B) + \dots + P(A_n \cap B) = \prod_{k=1}^{n}P(A_k|\bigcap_{j=1}^{k-1}A_j)\]
+
+\subsubsection{Bayes Theorem}
+Knowing of above, then we can write,
+\[ P(A|B) = \frac{P(A)P(B|A)}{P(B)} =  \frac{P(A)P(B|A)}{P(A_1\cap B) + \dots + P(A_n \cap B)}\]
 
 \subsection{Independency of two events}
-bla bla
+Two events are independence if and only if,
+\[ P(A\cap B) = P(A)P(B)\]
+
+If $A$ and $B$ are independence, then the occurrence of $A$ does no provide any information about $B$. Formally,
+\begin{center}
+    If $A, B$ independ. and $P(B)>0$ then $P(A|B) = \frac{P(A\cap B)}{P(B)} = \frac{P(A)\cancel{P(B)}}{\cancel{P(B)}} = P(A)$
+\end{center}
 
 \subsubsection{Conditional Independece}
-bla blo
+Given two events $A$ and $B$, they are conditionally independence if given $C$ and $P(C)>0$, 
+\[ P(A\cap B|C) = P(A\cap C|B\cap C) \]
+and
+\[ P(A|B\cap C) = P(A|C)\]
 
-\subsection{Combinatory Logic}
-Also know as expertise in counting \\
-bla bla
+TODO: Draw explanatory Venn diagram 
+
+\section{Discrete Random Variables}
+TODO
