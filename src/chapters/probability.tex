@@ -79,9 +79,7 @@ The number of \textbf{unordered sequences} within a set with $1\leq k \leq n$ th
 $r$ groups containing $n_i$ objects each,
 \[ \binom{n}{n_1,n_2\dots,n_r} = \frac{n!}{n_1!n_2!\dots n_r!} \]
 
-\section{Probability}
-
-\subsection{Random Experiments}
+\section{Random Experiments}
  A experiment is deterministic when knowing the state of the set of variables involved in the experiment the outcome is always the same.
  Conversely a experiment is random when knowing the state (or when we ignore some of these states) of the set of variables involved in
  the experiment the outcome differs. \\
@@ -221,5 +219,265 @@ and
 
 TODO: Draw explanatory Venn diagram 
 
-\section{Discrete Random Variables}
+\section{Random Variables}
+When we are dealing with random experiments, it's very common to use a number to represent a event of the sample space. It's called 
+random variable.\\
+
+A \textbf{random variable} (r.v.) is the numerical outcome of a random experiment. Formally, a random variable $X$ is a mapping
+$X: \Omega \rightarrow \mathbb{R}$ TODO: Write formal definition using borel sigma-algebra
+
+It associates each outcome of a random experiment with a real number and is measurable because the inverse image of every borelian 
+set does belong to the $\sigma$-algebra of events.
+
+\subsubsection{Support of Random Variables}
+We can define the support of the random variable depending of the size of the mapped set. A r.v. is:
+\begin{itemize}
+    \item \textbf{Discrete} if $X(\Omega)$ is a finite or numerable set.
+    \item \textbf{Continious} if $X(\Omega)$ contains an interval of $\mathbb{R}$
+\end{itemize}
+
+\subsection{Probability Mass Function}
+A probability mass function (p.m.f.) match a real number $x$ with the probability that an event exactly occurs.
+\[ p(x)=P(X=x)=P_X(x),\;\;\; \forall x\in \mathbb{R} \]
+
+% \includegraphics[width=2cm, height=1cm]{random_variables_1}
+\subsubsection{Properties}
 TODO
+
+\subsection{Cumulative Distribution Function}
+The cumulative distribution function (c.d.f.) measures the probability that an event is not greater or equal than a real number.
+\[ F(x) = P(X\leq x) = P_X((-\infty,x])),\;\;\; \forall x \in \mathbb{R} \]
+
+\subsubsection{Properties}
+\begin{itemize}
+    \item $\lim_{x \rightarrow -\infty} F(X) = 0$
+    \item $\lim_{x \rightarrow \infty} F(X) = 1$
+    \item F is non-decreasing
+    \item F is right-continious
+\end{itemize}
+
+\subsection{Random Sample}
+TODO
+Let $N$ and $n$ represent the numbers of elements in the population and sample,
+respectively. If the sampling is conducted in such a way that each of the $\binom{N}{n}$
+samples has an equal probability of being selected, the sampling is said to be
+random, and the result is said to be a random sample.
+
+Inference??\\
+
+The fact that we perform independent repetitions of the experiment means that, for each repetition of the experiment, 
+we have an associated r.v. with the same distribution F.\\
+
+Formal definition,\\
+A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a collection of r.v. $(X_1, X_2,\dots,X_n)$ that are 
+\textbf{independent and identically distributed (i.i.d.)} and all of them follows the same distribution $F$\\
+
+Because the random variables are independent, the c.d.f. of the sample is,
+\[ F_X(x_1,x_2,\dots,x_n) = F(X_1)F(x_2)\dots F(x_n) \]
+
+\subsection{Statistic}
+A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n) \rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ 
+is the dimension of the statistic. For example:
+\begin{itemize}
+    \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}X_i$
+    \item $T_1(X_1,X_2,\dots,X_n) = \sum_{i=1}^{n} \log{X_i}$
+    \item $\dots$
+    \item $\dots$
+    \item $\dots$
+    \item $T_1(X_1,X_2,\dots,X_n) = (X_{(1)}, X_{(n)})$
+\end{itemize}
+All these statistics have dimension $k=1$ except the last with $k=2$. The distribution induced by the statistic $T$ is called the 
+\textit{sampling distribution} of $T$, since it depends on the distribution of the sample.
+
+\subsection{Estimator}
+An estimator is an statistic that tries to estimate the value of a parameter $\theta$ that belongs to the distribution of the variable
+$X$.\\
+
+To clarify with a example, in the real world many r.v. follows a normal distribution with mean $\mu \in \mathbb{R}$ and variance 
+$\sigma^2 \in \mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the distribution of a r.v. belong to a 
+normal family of distributions $\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$\\
+
+Knowing this, it is said that the \textbf{sample mean} $\overline{X}$ and the \textbf{sample variance} $S^2$ are good estimators of 
+the distribution mean $\mu$ and distribution variance $\sigma^2$.
+
+\subsection{Mean, Variance and Standard Deviation}
+\subsubsection{Mean or Expectation}
+Let $X$ be a r.v. with the probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} frequency distribution,
+then, the \textit{expected value} of $X$ is,
+\[ \mathbb{E}[X] = \mu_{X} = \sum_{x} x\,P(X=x) \]
+
+if $p(x)$ is not an accurate characterization, then,
+\[ \mathbb{E}[X] \approx \mu_{X} \]
+
+\textbf{Properties}
+\begin{itemize}
+    \item $\mathbb{E}[c] = c$, if $c$ is a constant
+    \item $\mathbb{E}[aX+b]=a\mathbb{E}[X]+b$
+    \item $\mathbb{E}[g(x)]=\sum_{x}g(x)P(X=x)$
+    \item $\mathbb{E}[X^k] = \sum_{x} x^k P(X=x)$
+    \item $\mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y]$
+    \item $\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y]$, if $X$ and $Y$ are independent
+\end{itemize}
+
+\subsubsection{Variance}
+Let $X$ be a r.v. with mean $\mathbb{E}[X] = \mu$, probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} 
+frequency distribution, then, the variance of $X$ is defined to be the expected value of $(X-\mu)^2$, thus,
+\[ V[X] = \sigma^2_X = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - \mu^2 = \sum_{x}(x-\mathbb{E}[X])^2 P(X=x) \]
+
+if $p(x)$ is not an accurate characterization, then,
+\[ V[X] \approx \sigma^2_{X} \]
+
+\textbf{Properties}
+\begin{itemize}
+    \item $V[X] \geq 0$
+    \item $V[aX + b] = a^2V[X], \;\;\; \forall a,b \in \mathbb{R}$
+\end{itemize}
+
+\subsubsection{Standard Deviation}
+The standard deviation of $X$, is the positive square root of $V[X]$
+\[ \sigma = \sqrt{V[X]} \]
+
+
+\subsection{Median and Quantiles}
+\subsubsection{Median}
+The median is the most central value of a distribution of a r.v. $X$, thus, the median $m$ of $X$ satisfies,
+\[ P(X \leq m) \geq \frac{1}{2} \]
+and
+\[ P(X \leq m) \leq \frac{1}{2} \]
+TODO: add a explanatory image
+
+\subsubsection{$\alpha$-quantiles}
+For $0 < \alpha < 1$ the $\alpha$-quantile of a r.v. $X$ is a number $q_\alpha$ that satisfies,
+\[ P(X \leq q_\alpha) \geq \alpha \] 
+and
+\[ P(X \geq q_\alpha) \geq 1- \alpha \]
+TODO: add a explanatory image
+
+\subsection{Quantile Function}
+For $0 < \alpha < 1$ the \textit{quantile function} of a r.v. is defined as,
+\[ F^{-1}_X (\alpha) = \inf \{ x : F(x) \geq \alpha  \} \]
+TODO: add a explanatory image
+
+\subsubsection{Properties}
+TODO
+
+\section{Discrete Random Distributions}
+\subsection{Bernoulli Process}
+A \textbf{Bernoulli process} is random experiment in which outcome can only result in two different values. This outcomes are
+commonly refered as \textit{success} and \textit{failure}. The probability of success is $0 \leq p \leq 1$ and all experiment
+trials are \textit{independent}.
+\[ X \sim Bernoulli(p) \]
+
+\subsection{Binomial Distribution}
+Consider a Bernoulli process with probability of success $p$ and that is carried out independently $n$ times, a Binomial random variable 
+$X$ with parameters $n$ and $p$ represents the number of trials that result in success.
+\[ X \sim B(n, p) \]
+with
+\[ P(X=x) = \binom{n}{x}p^x(1-p)^{n-x},\;\;\; x \in \{0,1,2,\dots,n\} \]
+and have expectation and variance
+\[ \mathbb{E}[X] = np,\;\;\; V[X] = np(1-p) \]
+
+\textbf{Note: Be careful with the definition.} It's not the same 'number of trials' and 'number of success'.
+
+
+\subsubsection{Properties}
+If $X$ and $Y$ are independent, and $X \sim B(n_1, p), Y \sim B(n_2, p)$ then 
+\[ X+Y \sim B(n_1+n_2, p) \]
+
+\begin{figure}[!ht]
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_binomial_1}
+      \caption{Binomial p.m.f.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_binomial_2}
+      \caption{Binomial c.d.f.}
+    \end{minipage}
+\end{figure}
+
+\subsection{Geometric Distribution}
+Consider a Bernoulli trial with probability of success $p$, the number of independent trials that result in \textit{failure} obtained before 
+the first success follows a Geometric distribution with parameter $p$.
+\[ X \sim \mathcal{G}(p)\]
+with
+\[ P(X=x) = p(1-p)^x,\;\;\; x \in \{0,1,2,\dots,n\} \]
+and have expectation and variance
+\[ \mathbb{E}[X] = \frac{1-p}{p},\;\;\; V[X] = \frac{1-p}{p^2} \]
+
+\begin{figure}[!ht]
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_geometric_1}
+      \caption{Geometric p.m.f.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_geometric_2}
+      \caption{Geometric c.d.f.}
+    \end{minipage}
+\end{figure}
+
+\subsection{Negative Binomial Distribution}
+Consider a Bernoulli trial with probability of success $p$, the number of failures (independent trials that result in failure) before the $k$-th success 
+(that is, \textbf{number of trials} until $k$-success) follows a Negative Binomial distribution with parameters $k$ and $p$.
+\[ X \sim NB(k,p)\]
+with
+\[ P(X=x) = \binom{x+k-1}{x} p^k(1-p)^x,\;\;\; x \in \{0,1,2,\dots,n\} \]
+and have expectation and variance
+\[ \mathbb{E}[X] = \frac{k(1-p)}{p},\;\;\; V[X] = \frac{k(1-p)}{p^2} \]
+
+\textbf{Note: Be careful with the definition.} It's not the same 'number of trials' and 'number of success'.
+
+\begin{figure}[!ht]
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_negbinomial_1}
+      \caption{Negative Bin. p.m.f.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_negbinomial_2}
+      \caption{Negative Bin. c.d.f.}
+    \end{minipage}
+\end{figure}
+
+\subsection{Hypergeometric Distribution}
+Consider a finite population with $N_1+N_2$ objects, such that $N_1$ are of type 1 and $N_2$ are of type 2. A total number of $k$
+objects are selected from the population \textbf{without replacement}. The number of objects of type $N_1$ in the selection follows 
+a Hypergeometric distribution with parameters $N_1, N_2$, and $k$.
+\[ X \sim H(N_1,N_2,k)\]
+with
+\[ P(X=x) = \frac{\binom{N_1}{x}\binom{N_2}{k-x}}{\binom{N_1+N_2}{k}},\;\;\; x \in \{\max\{0,k-N_2\},\dots,\min\{k,N_1\} \} \]
+and have expectation and variance
+\[ \mathbb{E}[X] = \frac{kN_1}{N_1+N_2},\;\;\; V[X] = k\cdot\frac{N_1N_2}{(N_1+N_2)^2}\cdot\frac{N_1+N_2-k}{N_1+N_2-1} \]
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.4\linewidth]{random_distribution_hyperg_1}
+        \caption{Hypergeometric p.m.f.}
+    \end{center}
+\end{figure}
+
+\subsection{Poisson Distribution}
+The number of events that occur in a region of space (or time) independently one from the others and at a constant rate $\lambda >0$ 
+follows a Poisson distribution with parameter $\lambda$.
+\[ X \sim \mathcal{P}(\lambda)\]
+with
+\[ P(X=x) = e^{-\lambda}\frac{\lambda^x}{x!},\;\;\; x \in \{0,1,2,\dots,n\} \]
+and have expectation and variance
+\[ \mathbb{E}[X] = \lambda,\;\;\; V[X] = \lambda \]
+
+\subsubsection{Properties}
+If $X$ and $Y$ are independent, and $X \sim \mathcal{P}(\lambda_1), Y \sim \mathcal{P}(\lambda_2)$ then 
+\[ X+Y \sim \mathcal{P}(\lambda_1+\lambda_2) \]
+
+\begin{figure}[!ht]
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_poisson_1}
+      \caption{Poisson p.m.f.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+      \includegraphics[width=1\linewidth]{random_distribution_poisson_2}
+      \caption{Poisson c.d.f.}
+    \end{minipage}
+\end{figure}
