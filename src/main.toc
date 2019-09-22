@@ -70,46 +70,92 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Properties}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Random Sample}{19}
+\contentsline {subsection}{\numberline {2.4.3}Mean, Variance and Standard Deviation}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Statistic}{19}
+\contentsline {subsubsection}{Mean or Expectation}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.5}Estimator}{20}
+\contentsline {subsubsection}{Variance}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.6}Mean, Variance and Standard Deviation}{20}
+\contentsline {subsubsection}{Standard Deviation}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Mean or Expectation}{20}
+\contentsline {subsection}{\numberline {2.4.4}Median and Quantiles}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Variance}{21}
+\contentsline {subsubsection}{Median}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Standard Deviation}{21}
+\contentsline {subsubsection}{$\alpha $-quantiles}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.7}Median and Quantiles}{21}
+\contentsline {subsection}{\numberline {2.4.5}Quantile Function}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Median}{21}
+\contentsline {subsubsection}{Properties}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{$\alpha $-quantiles}{22}
+\contentsline {section}{\numberline {2.5}Discrete Random Distributions}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.8}Quantile Function}{22}
+\contentsline {subsection}{\numberline {2.5.1}Bernoulli Process}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Properties}{22}
+\contentsline {subsection}{\numberline {2.5.2}Binomial Distribution}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Discrete Random Distributions}{22}
+\contentsline {subsubsection}{Properties}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Bernoulli Process}{22}
+\contentsline {subsection}{\numberline {2.5.3}Geometric Distribution}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Binomial Distribution}{22}
+\contentsline {subsection}{\numberline {2.5.4}Negative Binomial Distribution}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Properties}{23}
+\contentsline {subsection}{\numberline {2.5.5}Hypergeometric Distribution}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Geometric Distribution}{23}
+\contentsline {subsection}{\numberline {2.5.6}Poisson Distribution}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Negative Binomial Distribution}{24}
+\contentsline {subsubsection}{Properties}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.5}Hypergeometric Distribution}{25}
+\contentsline {subsection}{\numberline {2.5.7}Multi Bernoulli Distribution}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.6}Poisson Distribution}{25}
+\contentsline {subsection}{\numberline {2.5.8}Zero Inflated Poisson Distribution}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Properties}{26}
+\contentsline {chapter}{\numberline {3}Statistical Inference}{27}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{27}
+\contentsline {subsection}{\numberline {3.0.1}Parametric Family of Distributions}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.0.2}Types of estimation (Inference)}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.0.3}Random Sample}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.0.4}Statistic}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.0.5}Estimators or Point Estimators}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.0.6}Biased and Unbiased Estimator}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Exact inference under Normal Distributions}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}Expected value and Variance of the sample mean}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}Expected value of the sample variance}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.3}Logarithmic Distribution Transformations}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.4}Sample Mean of Normal Distribution}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.5}Z statistic or Standarization}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.6}Chi-Square Distribution}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.7}Fisher's Theorem}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Dregrees of freedom remark}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.8}Student's Distribution}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.9}T statistic}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.10}Snedecor's Distribution}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Note:}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.11}F statistic}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Large Sample Inference}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Convergence in distribution}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Central Limit Theorem}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{35}

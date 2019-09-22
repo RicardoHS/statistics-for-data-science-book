@@ -7,9 +7,11 @@
 \usepackage{amsmath} %for big math definitions, enables \[  \]
 \usepackage{amssymb} %for common sets as real, complex, etc
 \usepackage{cancel} %to cancel math terms
+\usepackage{float} % to use the H param in tables and fix his position
 
 \addbibresource{bib/biblatex.bib}
 \graphicspath{ {./images/} }
+\restylefloat{table} % allow the tables to use the H param
 
 
 \title{
@@ -31,6 +33,9 @@
 
 \chapter{Probability}
 \input{chapters/probability}
+
+\chapter{Statistical Inference}
+\input{chapters/inference}
 
 \appendix
 \chapter{Appendix}

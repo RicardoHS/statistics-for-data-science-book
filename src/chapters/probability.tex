@@ -256,50 +256,6 @@ The cumulative distribution function (c.d.f.) measures the probability that an e
     \item F is right-continious
 \end{itemize}
 
-\subsection{Random Sample}
-TODO
-Let $N$ and $n$ represent the numbers of elements in the population and sample,
-respectively. If the sampling is conducted in such a way that each of the $\binom{N}{n}$
-samples has an equal probability of being selected, the sampling is said to be
-random, and the result is said to be a random sample.
-
-Inference??\\
-
-The fact that we perform independent repetitions of the experiment means that, for each repetition of the experiment, 
-we have an associated r.v. with the same distribution F.\\
-
-Formal definition,\\
-A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a collection of r.v. $(X_1, X_2,\dots,X_n)$ that are 
-\textbf{independent and identically distributed (i.i.d.)} and all of them follows the same distribution $F$\\
-
-Because the random variables are independent, the c.d.f. of the sample is,
-\[ F_X(x_1,x_2,\dots,x_n) = F(X_1)F(x_2)\dots F(x_n) \]
-
-\subsection{Statistic}
-A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n) \rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ 
-is the dimension of the statistic. For example:
-\begin{itemize}
-    \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}X_i$
-    \item $T_1(X_1,X_2,\dots,X_n) = \sum_{i=1}^{n} \log{X_i}$
-    \item $\dots$
-    \item $\dots$
-    \item $\dots$
-    \item $T_1(X_1,X_2,\dots,X_n) = (X_{(1)}, X_{(n)})$
-\end{itemize}
-All these statistics have dimension $k=1$ except the last with $k=2$. The distribution induced by the statistic $T$ is called the 
-\textit{sampling distribution} of $T$, since it depends on the distribution of the sample.
-
-\subsection{Estimator}
-An estimator is an statistic that tries to estimate the value of a parameter $\theta$ that belongs to the distribution of the variable
-$X$.\\
-
-To clarify with a example, in the real world many r.v. follows a normal distribution with mean $\mu \in \mathbb{R}$ and variance 
-$\sigma^2 \in \mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the distribution of a r.v. belong to a 
-normal family of distributions $\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$\\
-
-Knowing this, it is said that the \textbf{sample mean} $\overline{X}$ and the \textbf{sample variance} $S^2$ are good estimators of 
-the distribution mean $\mu$ and distribution variance $\sigma^2$.
-
 \subsection{Mean, Variance and Standard Deviation}
 \subsubsection{Mean or Expectation}
 Let $X$ be a r.v. with the probability function $p(x)$, then, the \textit{expected value} of $X$ is,
@@ -482,6 +438,10 @@ If $X$ and $Y$ are independent, and $X \sim \mathcal{P}(\lambda_1), Y \sim \math
       \caption{Poisson c.d.f.}
     \end{minipage}
 \end{figure}
+
+\subsection{Multi Bernoulli Distribution}
+TODO
+
 
 \subsection{Zero Inflated Poisson Distribution}
 TODO
