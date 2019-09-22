@@ -304,10 +304,10 @@ the distribution mean $\mu$ and distribution variance $\sigma^2$.
 \subsubsection{Mean or Expectation}
 Let $X$ be a r.v. with the probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} frequency distribution,
 then, the \textit{expected value} of $X$ is,
-\[ \mathbb{E}[X] = \mu_{X} = \sum_{x} x\,P(X=x) \]
+\[ \mu_{X} = \mathbb{E}[X] = \sum_{x} x\,P(X=x) \]
 
 if $p(x)$ is not an accurate characterization, then,
-\[ \mathbb{E}[X] \approx \mu_{X} \]
+\[ \mu_{X} \approx \mathbb{E}[X] \]
 
 \textbf{Properties}
 \begin{itemize}
@@ -316,22 +316,23 @@ if $p(x)$ is not an accurate characterization, then,
     \item $\mathbb{E}[g(x)]=\sum_{x}g(x)P(X=x)$
     \item $\mathbb{E}[X^k] = \sum_{x} x^k P(X=x)$
     \item $\mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y]$
+    \item $\mathbb{E}[X-Y] = \mathbb{E}[X] - \mathbb{E}[Y]$
     \item $\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y]$, if $X$ and $Y$ are independent
 \end{itemize}
 
 \subsubsection{Variance}
 Let $X$ be a r.v. with mean $\mathbb{E}[X] = \mu$, probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} 
 frequency distribution, then, the variance of $X$ is defined to be the expected value of $(X-\mu)^2$, thus,
-\[ V[X] = \sigma^2_X = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - \mu^2 = \sum_{x}(x-\mathbb{E}[X])^2 P(X=x) \]
+\[ \sigma^2_X = V[X] = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - \mu^2 = \sum_{x}(x-\mathbb{E}[X])^2 P(X=x) \]
 
 if $p(x)$ is not an accurate characterization, then,
-\[ V[X] \approx \sigma^2_{X} \]
+\[ \sigma^2_{X} \approx  V[X] \]
 
 \textbf{Properties}
 \begin{itemize}
     \item $V[X] \geq 0$
     \item $V[aX + b] = a^2V[X], \;\;\; \forall a,b \in \mathbb{R}$
-    \item $V[X \pm Y] = V[X] + V[Y]$ if $X$ and $Y$ are independent.
+    \item $V[X \pm Y] = V[X] + V[Y]$, if $X$ and $Y$ are independent.
     \item $V[X + Y] = V[X] + V[Y] + 2Cov(X,Y)$
 \end{itemize}
 
@@ -443,7 +444,7 @@ and have expectation and variance
 \end{figure}
 
 \subsection{Hypergeometric Distribution}
-Consider a finite population with $N_1+N_2$ objects, such that $N_1$ are of type 1 and $N_2$ are of type 2. A total number of $k$
+Consider a \textbf{finite population} with $N_1+N_2$ objects, such that $N_1$ are of type 1 and $N_2$ are of type 2. A total number of $k$
 objects are selected from the population \textbf{without replacement}. The number of objects of type $N_1$ in the selection follows 
 a Hypergeometric distribution with parameters $N_1, N_2$, and $k$.
 \[ X \sim H(N_1,N_2,k)\]
