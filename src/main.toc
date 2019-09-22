@@ -2,4 +2,114 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{9}
+\contentsline {chapter}{\numberline {2}Probability}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Set Theory}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Notation}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Binary Operations}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Properties}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Combinatory}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Rule of Product}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}k-permutations}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}k-combinations}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Partitions}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Random Experiments}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Events Operations}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Formal Definitions}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\sigma $-algebra}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\sigma $-algebra discrete}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Measurable Space}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Frequentist Definition}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{LaPlace's Definition}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Kolmogorov Definition}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Cox's Theorem}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Properties}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Conditional Probability}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.5}Bayes Theorem}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Total Probability Rule}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Bayes Theorem}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.6}Independency of two events}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Conditional Independece}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Random Variables}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Support of Random Variables}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.1}Probability Mass Function}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.2}Cumulative Distribution Function}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.3}Random Sample}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.4}Statistic}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.5}Estimator}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.6}Mean, Variance and Standard Deviation}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mean or Expectation}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Variance}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Standard Deviation}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.7}Median and Quantiles}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Median}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\alpha $-quantiles}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.8}Quantile Function}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Discrete Random Distributions}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.1}Bernoulli Process}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.2}Binomial Distribution}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.3}Geometric Distribution}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.4}Negative Binomial Distribution}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.5}Hypergeometric Distribution}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.6}Poisson Distribution}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Properties}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{27}
