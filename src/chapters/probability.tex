@@ -302,12 +302,11 @@ the distribution mean $\mu$ and distribution variance $\sigma^2$.
 
 \subsection{Mean, Variance and Standard Deviation}
 \subsubsection{Mean or Expectation}
-Let $X$ be a r.v. with the probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} frequency distribution,
-then, the \textit{expected value} of $X$ is,
-\[ \mu_{X} = \mathbb{E}[X] = \sum_{x} x\,P(X=x) \]
+Let $X$ be a r.v. with the probability function $p(x)$, then, the \textit{expected value} of $X$ is,
+\[ \mu_{X} \approx \mathbb{E}[X] = \sum_{x} x\,P(X=x) \]
 
-if $p(x)$ is not an accurate characterization, then,
-\[ \mu_{X} \approx \mathbb{E}[X] \]
+if $p(x)$ is an accurate characterization of the \textit{population} frequency distribution, then,
+\[ \mu_{X} = \mathbb{E}[X] \]
 
 \textbf{Properties}
 \begin{itemize}
@@ -321,12 +320,11 @@ if $p(x)$ is not an accurate characterization, then,
 \end{itemize}
 
 \subsubsection{Variance}
-Let $X$ be a r.v. with mean $\mathbb{E}[X] = \mu$, probability function $p(x)$, and $p(x)$ is an accurate characterization of the \textit{population} 
-frequency distribution, then, the variance of $X$ is defined to be the expected value of $(X-\mu)^2$, thus,
-\[ \sigma^2_X = V[X] = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - \mu^2 = \sum_{x}(x-\mathbb{E}[X])^2 P(X=x) \]
+Let $X$ be a r.v. with mean $\mathbb{E}[X] = \mu$, probability function $p(x)$, then, the variance of $X$ is defined to be the expected value of $(X-\mu)^2$, thus,
+\[ \sigma^2_X \approx V[X] = \mathbb{E}[(X-\mu)^2] = \mathbb{E}[X^2] - \mu^2 = \sum_{x}(x-\mathbb{E}[X])^2 P(X=x) \]
 
-if $p(x)$ is not an accurate characterization, then,
-\[ \sigma^2_{X} \approx  V[X] \]
+if $p(x)$ is an accurate characterization of the \textit{population} frequency distribution, then,
+\[ \sigma^2_{X} =  V[X] \]
 
 \textbf{Properties}
 \begin{itemize}
