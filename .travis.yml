@@ -2,6 +2,7 @@ sudo: required
 language: generic
 services: docker
 script:
+- $TRAVIS_BUILD_DIR/generate_tex_version.sh
 - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic
   main.tex"

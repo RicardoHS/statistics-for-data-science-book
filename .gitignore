@@ -4,3 +4,4 @@
 *.bcf
 *.run.xml
 *.pdf
+src/version.tex
