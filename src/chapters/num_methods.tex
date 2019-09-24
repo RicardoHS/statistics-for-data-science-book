@@ -1,0 +1,120 @@
+This chapter will focus on the methods and processes needed to choose the optimal 
+solution given a mathematical model. This chapter also include the processes needed to build these models.\\
+
+This field of study is also know as \textbf{Prescriptive Analysis} or \textbf{Operations Research}.
+
+The schematic way to proceed in this problems is the following:
+\begin{center}
+    Problem Description $\rightarrow$ Model Formulation $\rightarrow$ Analysis \& Algorithms $\rightarrow$
+    Computer Solution $\rightarrow$ Interpretation
+\end{center}
+
+The elements involved in all mathematical decision models are the following:
+\begin{itemize}
+    \item Decision Variables: Are the ones we want to know his optimal value. (e.g. number of products to 
+    build in a period of time)
+        \[ x = (x_1, x_2, \dots , x_n) \]
+    \item Objective Function: Is the one that model the problem. It will be always needed to \textit{maximize} or \textit{minimize} it.
+    \begin{center}
+        $\max f(x)$ or $\min f(x)$
+    \end{center}
+    \item Constraints: Are the limitations to the objective function. It could be given by definition or been deducted by the data. 
+        \[ g_1(x)\leq b_1,\;\; g_2(x)\geq b_2, \;\; b_3=b_3 \]
+\end{itemize}
+
+The main goal to a correct model building is to identify these three elements and define it in a proper way. Contrary that the logic 
+intuition could make us think, simplest models are better than complex one with lot of constraints and elaborated objective functions. \\
+
+\textbf{All models are wrong, but some are useful} (? citation)\\
+
+Why use this models? Because most of the times the time and memory computational complexity to resolve some problems in a brute force
+or in a non analytical way is way greater than the models developed using this approach.
+
+\section{Notation}
+\begin{itemize}
+    \item 
+\end{itemize}
+
+
+\section{Linear Optimization (LO) Models}
+Most important type of decision optimization models. Is the foundation to understand the complex ones. Also is one of the most widely
+applied models because of his simplicity.\\
+
+Limitations:
+\begin{itemize}
+    \item Decision variables needs to be continuous.
+        \[x = (x_1, x_2, \dots , x_n) \in \mathbb{R}\]
+    \item Objective function needs to be linear in $x$
+        \[ f(x_1,x_2, \dots, x_n) = c_1x_1 + c_2x_2 + \dots + c_nx_n \]
+    \item Constraints needs to be linear in $x$
+        \begin{gather*}
+            a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n \leq b_1 \\
+            a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n \leq b_2 \\
+            \dots\\
+            a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n \leq b_m
+        \end{gather*}
+    \item Decision Variables needs to be non-negative
+        \[ x_1 \geq 0,\;\;\; x_2 \geq 0,\;\;\; \dots\;\;\; x_n \geq 0 \]
+\end{itemize}
+
+The set of possibles solutions of the model is called \textbf{feasible region} and it's always a convex polytope (for two dimensions, polygon).
+This polytope is defined by the intersection of the problem constraints. The optimal solution of the problem is whose that \textit{maximize} or 
+\textit{minimize} the objective function inside the feasible region. Usually, this optimal solution is find computationally.\\
+
+\subsection{Sensitivity Analysis}
+Once we already have the optimal solution for a LO problem, it would be important to analyze if slight changes in the constraints or the objective function
+affects the optimal solution or it remains the same. Specifically, we would want to analyse and find the \textbf{parameter bounds} of the optimal solution.
+We are going to analyze two types of changes:
+\begin{enumerate}
+    \item Changes in objective coefficients
+    \item Changes in the right-hand side of the constraints    
+\end{enumerate}
+
+\subsubsection{Changes in objective coefficients}
+\textbf{Simplified example.}\\
+Given an objective function (o.f.),
+\[ z(x_1, x_2) = 5x_1 + 4x_2 \]
+with optimal solution in $x^* = (3, 3/2)$, we can perform the sensitivity analysis if the changes in the o.f. are expressed as,
+\[ \max \hat{z}(x_1, x_2) = (5+\Delta r_1)x_1 + (4 + \Delta r_2)x_2 \]
+
+\textbf{Solution:}\\
+We know that $x^* = (3, 3/2)$ for $(\Delta r_1, \Delta r2) = 0$, but, for which increments of $(\Delta r_1, \Delta r2)$ is optimal $x^*$?
+$x^*$ is optimal only and only if
+\begin{center}
+    slope of M1 constraint $\leq$ slope of $\hat{z} \leq$ slope of M2 constraint
+\end{center} 
+\[ -\frac{3}{2} \leq \frac{5 + \Delta r_1}{4 + \Delta r_2} \leq -\frac{1}{2} \]
+Note: We can draw the region of solution if we represent the increments as axis (include image)
+
+\subsubsection{Changes in the RHS of the constraints}
+Simplified example.\\
+Given constraints,\\
+M1: $ 6x_1 + 4x_2 = 24 $ \\
+M2: $ x_1 + 2x_2 = 6 $\\
+We can repeat the same approach\\
+M1: $ 6+x_1 + 4x_2 = 24 + \Delta b_1 $\\
+M2: $ x_1 + 2x_2 = 6 + \Delta b_2 $
+
+\textbf{Shadow prize and range of validity}
+Shadow price is change of the objective function per unit in the RHS\\
+Range of validity is the range of values of the RHS in which the solution remains optimal
+
+\subsection{Duality}
+Wikipedia\\
+The duality principle is the principle that optimization problems may be viewed from either of two perspectives, the primal problem or the dual problem. 
+The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem. However in general the optimal values of 
+the primal and dual problems need not be equal. Their difference is called the duality gap. For convex optimization problems, the duality gap is zero under 
+a constraint qualification condition. \\
+
+These conditions are:
+\begin{itemize}
+    \item Non-negative variables
+    \item The objective functions need to be maximize
+    \item All constrains must be equality (non inecuations)
+    \item The right-hand side values must be non-negatives
+\end{itemize}
+
+If some of this conditions are not satisfied, we can convert the equations to make it satisfied.\\
+\textbf{for constrains that are non-equality}\\
+\textbf{for variables with unrestricted sign}\\
+

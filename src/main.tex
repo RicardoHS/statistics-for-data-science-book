@@ -3,6 +3,16 @@
 
 \documentclass[12pt]{book} 
 \usepackage{biblatex} 
+\usepackage{graphicx} % for images
+\usepackage{amsmath} %for big math definitions, enables \[  \]
+\usepackage{amssymb} %for common sets as real, complex, etc
+\usepackage{cancel} %to cancel math terms
+\usepackage{float} % to use the H param in tables and fix his position
+
+\addbibresource{bib/biblatex.bib}
+\graphicspath{ {./images/} }
+\restylefloat{table} % allow the tables to use the H param
+
 \addbibresource{bib/biblatex.bib}
 
 \begin{document}
@@ -25,8 +35,20 @@
 \chapter*{Preface}
 \input{chapters/preface}
 
-\chapter{Introduction}
+\chapter*{Introduction}
 \input{chapters/introduction}
+
+\chapter{Linear Algebra}
+\input{chapters/linear_algebra}
+
+\chapter{Probability}
+\input{chapters/probability}
+
+\chapter{Statistical Inference}
+\input{chapters/inference}
+
+\chapter{Numerical Methods}
+\input{chapters/num_methods}
 
 \appendix
 \chapter{Appendix}
