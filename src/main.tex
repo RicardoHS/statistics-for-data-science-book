@@ -13,16 +13,23 @@
 \graphicspath{ {./images/} }
 \restylefloat{table} % allow the tables to use the H param
 
-
-\title{
-{Statistics for Data Science}\\
-%{\includegraphics{university.jpg}}
-}
-\author{Ricardo Hortelano}
-\date{2019}
+\addbibresource{bib/biblatex.bib}
 
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+    \vspace*{\stretch{1.0}}
+    \begin{center}
+       \Large\textbf{Statistics for Data Science}\\
+       \large\textit{Ricardo Hortelano}\\
+       \textit{2019}\\
+       \vspace*{3\baselineskip}
+       \textit{Release:}\\
+       \textit{\input{version}}
+    \end{center}
+    \vspace*{\stretch{2.0}}
+ \end{titlepage}
+
 \tableofcontents
 
 \chapter*{Preface}
@@ -36,6 +43,9 @@
 
 \chapter{Statistical Inference}
 \input{chapters/inference}
+
+\chapter{Numerical Methods}
+\input{chapters/num_methods}
 
 \appendix
 \chapter{Appendix}
