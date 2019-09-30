@@ -109,6 +109,117 @@ of one value in $x_n$ implies an increment of $a$ in $x_i$. Whereas, the interce
     \item Certainty, the value assigned to each parameter is assumed to be a known constant. This allow us to perform sensitivity analysis.
 \end{itemize}
 
+\subsection{Duality}
+Every linear programming problem has associated with it another linear programming
+problem called the \textbf{dual}.\\
+
+Wikipedia\\
+The duality principle is the principle that optimization problems may be viewed from either of two perspectives, the \textbf{primal problem} or the \textbf{dual problem}. 
+The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem. However in general the optimal values of 
+the primal and dual problems need not be equal. Their difference is called the duality gap. For convex optimization problems, the duality gap is zero under 
+a constraint qualification condition. \\
+
+These conditions are:
+\begin{itemize}
+    \item Non-negative variables
+    \[x = (x_1^+, x_2^+, \dots , x_n^+) \in \mathbb{R}\]
+    \item The objective functions need to be maximize
+    \[ \text{maximize } c_1x_1 + c_2x_2 + \dots + c_nx_n\]
+    \item All constrains must be equality (non inecuations)
+    \[ a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m \]
+    \item The right-hand side values must be non-negatives
+    \[ b_m > 0,\;\; \forall m \in \{1,2,\dots,m\} \]
+\end{itemize}
+
+If some of this conditions are not satisfied, we can convert the equations to make it satisfied.\\
+\textbf{For constrains that are non-equality}\\
+Given, $x_1 \leq 4$ we can convert it to a new variable. Just,
+\[ x_1 \leq 4 \equiv  x_3 = 4 - x_1\]
+This new variable $x_3$ is called \textbf{slack or surplus variable} depending of what is doing. So for a problem,
+\setlength{\columnseprule}{1pt}
+\begin{multicols}{2}
+    Original Problem \begin{multline*} 
+        \text{maximize } Z = 3x_1 + 5x_2 \\
+        \text{subject to }\\
+        x_1 \leq 4\\
+        2x_2 \leq 12
+    \end{multline*}
+
+    Augmented Problem \begin{multline*}
+        \text{maximize } Z = 3x_1 + 5x_2 \\
+        \text{subject to }\\
+        x_1 + x_3 = 4\\
+        2x_2 + x_4 = 12
+    \end{multline*}
+\end{multicols}
+\textbf{For variables with unrestricted sign}\\
+TODO
+
+\subsubsection{Formulation}
+\setlength{\columnseprule}{1pt}
+\begin{multicols}{2}
+    Primal Problem \begin{multline*} 
+        \text{maximize } Z = \sum_{j=1}^n c_jx_j \\
+        \text{subject to }\\
+        \sum_{j=1}^n a_{ij}x_j \leq b_i, \;\;\; \forall i \in \{1,2,\dots,m\}\\
+        \text{and}\\
+        x_j \geq 0, \;\;\; \forall j \in \{1,2,\dots,n\}
+    \end{multline*}
+
+    Dual Problem \begin{multline*}
+        \text{minimize } W = \sum_{i=1}^m b_iy_i \\
+        \text{subject to }\\
+        \sum_{i=1}^m a_{ij}y_i \leq c_j, \;\;\; \forall j \in \{1,2,\dots,m\}\\
+        \text{and}\\
+        y_i \geq 0, \;\;\; \forall i \in \{1,2,\dots,n\}
+    \end{multline*}
+\end{multicols}
+
+\subsubsection{Properties}
+\begin{itemize}
+    \item \textbf{Weak duality}: If $x$ is a feasible solution for the (P) and $y$ is a feasible solution for (D), then
+    \[ cx \leq yb \]
+    \item \textbf{Strong duality}: If $x^*$ is an optimal solution for (P) and $y^*$ is an optimal solution for (D), then,
+    \[ cx^* = y^*b \]
+\end{itemize}
+Thus, these two properties imply that $cx < yb$ for feasible solutions if one or both of them
+are not optimal for their respective problems, whereas equality holds when both are optimal.
+
+\begin{itemize}
+    \item \textbf{Symmetry property}: For any primal problem and its dual problem, all relationships between them must be 
+    symmetric because the dual of this dual problem is this primal problem.
+\end{itemize}
+
+\subsubsection{Relation between primal and dual problem}
+The following are the only possible relationships between the two problems.
+\begin{enumerate}
+     \item If one problem has feasible solutions and a bounded objective function (and
+     so has an optimal solution), then so does the other problem, so both the weak
+     and strong duality properties are applicable.
+     \item If one problem has feasible solutions and an unbounded objective function
+     (and so no optimal solution), then the other problem has no feasible solutions.
+     \item If one problem has no feasible solutions, then the other problem has either no
+     feasible solutions or an unbounded objective function.
+\end{enumerate}
+
+\subsubsection{Complementary Basic Solutions}
+Because the problem (D) is also a LO problem, it also has a corner point solution. Ussing the augmented form of the problem 
+we can express these corner-point solution as a basic solution. Because the functional constrains have $\geq$, this solution
+is obtained by subtracting the surplus (rather than adding the slack) from the Left-HS of each constraint $j$. Thus,
+\[ z_j - c_j = \sum_{i=1}^m a_{ij}y_i - c_j,\;\; \forall j \in \{1,2,\dots,n\} \]
+So $z_j-c_j$ is the \textbf{}{surplus variable} for constraint $j$ (or its slack variable if
+the constraint is multiplied through by -1). \\
+
+One of the important relationships between the primal and dual problems is a direct cor-
+respondence between their basic solutions.
+\begin{itemize}
+    \item \textbf{Complementary basic solutions property}: Each basic solution in the primal
+    problem has a \textbf{complementary basic solution} in the dual problem, where their
+    respective objective function values (Z and W) are equal.
+    \item \textbf{Complementary slackness property}: CHECK THIS and addapt to the defition given here
+    \[ (\sum_{i=1}^m a_{ij}\pi_i - r_j) \bar{x}_j = 0, \;\; \forall j \in \{ 1,2,\dots,n \} \]
+\end{itemize}
+
 
 \subsection{Sensitivity Analysis}
 Once we already have the optimal solution for a LO problem, it would be important to analyze if slight changes in the constraints or the objective function
@@ -124,9 +235,8 @@ We are going to analyze two types of changes:
 Given an objective function (o.f.),
 \[ \text{maximize } z(x_1, x_2) = 5x_1 + 4x_2 \]
 Subject to
-\[ \text{M1: } 6x_1 + 4x_2 \leq 24 \\
-    \text{M2: } x_1 + 2x_2 \leq 6
-\]
+\[ \text{M1: } 6x_1 + 4x_2 \leq 24 \]
+\[\text{M2: } x_1 + 2x_2 \leq 6 \]
 with optimal solution in $x^* = (3, 3/2)$, we can perform the sensitivity analysis if the changes in the o.f. are expressed as,
 \[ \text{maximize } \hat{z}(x_1, x_2) = (5+\Delta r_1)x_1 + (4 + \Delta r_2)x_2 \]
 
@@ -151,65 +261,3 @@ M2: $ x_1 + 2x_2 = 6 + \Delta b_2 $
 \textbf{Shadow prize and range of validity}
 Shadow price is change of the objective function per unit in the RHS\\
 Range of validity is the range of values of the RHS in which the solution remains optimal
-
-\subsection{Duality}
-Every linear programming problem has associated with it another linear programming
-problem called the \textbf{dual}.\\
-
-Wikipedia\\
-The duality principle is the principle that optimization problems may be viewed from either of two perspectives, the \textbf{primal problem} or the \textbf{dual problem}. 
-The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem. However in general the optimal values of 
-the primal and dual problems need not be equal. Their difference is called the duality gap. For convex optimization problems, the duality gap is zero under 
-a constraint qualification condition. \\
-
-These conditions are:
-\begin{itemize}
-    \item Non-negative variables
-    \[x = (x_1^+, x_2^+, \dots , x_n^+) \in \mathbb{R}\]
-    \item The objective functions need to be maximize
-    \[ \text{maximize } c_1x_1 + c_2x_2 + \dots + c_nx_n\]
-    \item All constrains must be equality (non inecuations)
-    \[ a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m \]
-    \item The right-hand side values must be non-negatives
-    \[ b_m > 0,\;\; \forall m \in \{1,2,\dots,m\} \]
-\end{itemize}
-
-If some of this conditions are not satisfied, we can convert the equations to make it satisfied.\\
-\textbf{for constrains that are non-equality}\\
-\textbf{for variables with unrestricted sign}\\
-
-\subsubsection{Formulation}
-\setlength{\columnseprule}{1pt}
-\begin{multicols}{2}
-    Primal Problem \begin{multline} 
-        \text{maximize } Z = \sum_{j=1}^n c_jx_j \\
-        \text{subject to }\\
-        \sum_{j=1}^n a_{ij}x_j \leq b_i, \;\;\; \forall i \in \{1,2,\dots,m\}\\
-        \text{and}\\
-        x_j \geq 0, \;\;\; \forall j \in \{1,2,\dots,n\}
-    \end{multline}
-
-    Dual Problem \begin{multline}
-        \text{minimize } W = \sum_{i=1}^m b_iy_i \\
-        \text{subject to }\\
-        \sum_{i=1}^m a_{ij}y_i \leq c_j, \;\;\; \forall j \in \{1,2,\dots,m\}\\
-        \text{and}\\
-        y_i \geq 0, \;\;\; \forall i \in \{1,2,\dots,n\}
-    \end{multline}
-\end{multicols}
-
-\subsubsection{Properties}
-\begin{itemize}
-    \item \textbf{Weak duality}: If $x$ is a feasible solution for the (P) and $y$ is a feasible solution for (D), then
-    \[ cx \leq yb \]
-    \item \textbf{Strong duality}: If $x^*$ is an optimal solution for (P) and $y^*$ is an optimal solution for (D), then,
-    \[ cx^* = y^*b \]
-\end{itemize}
-Thus, these two properties imply that $cx < yb$ for feasible solutions if one or both of them
-are not optimal for their respective problems, whereas equality holds when both are optimal.
-
-\begin{itemize}
-    \item \textbf{Symmetry property}: For any primal problem and its dual problem, all relationships between them must be 
-    symmetric because the dual of this dual problem is this primal problem.
-\end{itemize}
-
