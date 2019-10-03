@@ -226,9 +226,36 @@ Once we already have the optimal solution for a LO problem, it would be importan
 affects the optimal solution or it remains the same. Specifically, we would want to analyse and find the \textbf{parameter bounds} of the optimal solution.
 We are going to analyze two types of changes:
 \begin{enumerate}
-    \item Changes in objective coefficients
-    \item Changes in the right-hand side of the constraints    
+    \item Changes in objective coefficients (changes in $c_{j}$ values)
+    \item Changes in the right-hand side of the constraints (changes in $b_i$ values)   
 \end{enumerate}
+
+
+\subsubsection{Changes in the coefficients of nonbasic variables}
+Because the variable involved is nonbasic (value of zero), changing its coefficients
+cannot affect the feasibility of the solution. Therefore, the open question in this case is
+whether it is still optimal.Since these changes affect the dual problem by changing only 
+one constraint, this question can be answered simply by checking whether this complementary
+basic solution still satisfies this revised constraint.
+
+\subsubsection{General Procedure}
+\[ \text{Model Revision} \rightarrow \text{Final tableau revision} \rightarrow \text{Gaussian elimination}
+\rightarrow \text{Feasibility text} \rightarrow \text{Optimality test} \rightarrow \text{Reoptimization} \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{Changes in objective coefficients}
 \textbf{Simplified example.}\\
