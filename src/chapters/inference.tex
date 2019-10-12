@@ -250,6 +250,22 @@ $\hat{\theta}_{n,2}$
     MSE).
 \end{itemize}
 
+\subsection{Relative Error}
+One problem that appears when measuring errors is that in general one error cant
+be directly compared with another one. One way to overcome this is to use a
+measurement that holds the same scale.
+\subsubsection{Coefficient of Variation}
+Given a estimator $\hat{\theta}$ with standard deviation $\sigma(\hat{\theta})$.
+The coefficient of variation or relative standard deviation (RSD) is defined as
+\[ \text{C.V.}(\hat{\theta}) =
+\frac{\sigma(\hat{\theta})}{\hat{\theta}}\text{x}100\;\;\;\;\;\;
+\text{if}\hat{\theta} \text{ is unbiased}\]
+\[
+\text{RRMSE}(\hat{\theta}) = \text{C.V.}(\hat{\theta}) = 
+\frac{\sqrt{\text{MSE}(\hat{\theta})}}{\hat{\theta}}\text{x}100\;\;\;\;\;\; \text{if
+}\hat{\theta} \text{ is biased}
+ \] 
+
 \subsection{Invariant}
 \todo[inline]{add more invariant properties}
 \subsubsection{Translation Invariant}
@@ -377,7 +393,8 @@ satisfies
 
 \subsection{Efficient estimator}
 An unbiased estimator $\hat{\theta}_n$ of $\theta$ that satisfies
-$V(\hat{\theta}_n)=1 / \mathcal{I}_n(\theta)$ is called efficient.
+$V(\hat{\theta}_n)=1 / \mathcal{I}_n(\theta)$ is called efficient. If an
+estimator is efficient it means that it is the best possible estimator.
 \todo{add example}
 
 \section{Robust Estimators}
@@ -434,9 +451,44 @@ estimator.
 \subsection{Finite-sample breakdown point}
 The breakdown point of an estimator can be interpreted as the maximum fraction
 of the sample that can be changed without modifying the value of $\hat{\theta}$
-to an aribtrary large value.
+to an arbitrary large value.
 
 \todo[inline]{add better explanation, examples of robust estimators, trimmed mean, etc}
 
 \section{Estimation methods}
-Method of moments and maximum likelihood method.
+\todo[inline]{add introductory text}
+\subsection{Method of moments}
+\subsubsection{Population moments}
+Let's consider a population $X$ with a unknown distribution that depends on $K$
+unknown parameters $\theta_1,\dots,\theta_K$. The populations moments are
+functions of the unknown parameters, if they exists. Formally,
+\[ \alpha_r = \alpha_r(\theta_1,\dots,\theta_K) = \mathbb{E}[X^r],\;\;\;
+r=1,2,3,\dots \]
+
+\subsubsection{Sample moment}
+Given a s.r.s. of $X$, it's denoted by $a_r$ to the sample moment of order $r$
+that estimate $\alpha_r$
+\[ a_r = \bar{X}^r = \frac{1}{n}\sum_{i=1}^n X^r_i\;\;\;\;\;r=1,2,3,\dots\] It's
+important to note that the sample moments do not depend of
+$\alpha_1,\dots,\alpha_K$ but the population moment does. 
+
+\subsubsection{Method of Moments}
+Let $X$ be a r.v. that follow a unknown distribution of unknown parameters
+$\theta_1,\dots,\theta_K$. The method of moments estimates this parameters by
+resolving a system of equations of shape
+\[ \alpha_r(\theta_1,\dots,\theta_K) = a_r\;\;\;\; r=1,\dots,R \] where $R \geq
+K$ is the lowest integer such that the system admits a unique solution. This
+estimator of $\theta$ is denoted by $\hat{\theta}_{MM}$
+\todo[inline]{add example}
+
+\subsubsection{Consistency of moments estimators}
+In the moment estimator method, if $\mathbb{E}[(X^{r_k}-\alpha_{r_k})^2]<\infty$
+and $\theta_k=g_k(\alpha_{r_1},\dots,\alpha_{r_K})$, with $g_k$ continuous and
+$k=1,\dots,K$ then
+\[ \hat{\theta}_k = g_k(a_{r_1},\dots,a_{r_K})\xrightarrow{P}\theta_k, \;\;\;\;
+i=1,\dots,K \]
+
+\subsection{Maximum Likelihood Method}
+This method relies in the believe that whatever happens in the reality is what is more
+probably to happen.
+
