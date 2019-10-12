@@ -6,6 +6,8 @@
 \usepackage{graphicx} % for images
 \usepackage{amsmath} %for big math definitions, enables \[  \]
 \usepackage{amssymb} %for common sets as real, complex, etc
+\usepackage{graphicx} %for insert images
+\usepackage{multicol} %for multicolumns
 \usepackage{cancel} %to cancel math terms
 \usepackage{float} % to use the H param in tables and fix his position
 
@@ -13,29 +15,42 @@
 \graphicspath{ {./images/} }
 \restylefloat{table} % allow the tables to use the H param
 
-
-\title{
-{Statistics for Data Science}\\
-%{\includegraphics{university.jpg}}
-}
-\author{Ricardo Hortelano}
-\date{2019}
+\addbibresource{bib/biblatex.bib}
 
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+    \vspace*{\stretch{1.0}}
+    \begin{center}
+       \Large\textbf{Statistics for Data Science}\\
+       \large\textit{Ricardo Hortelano}\\
+       \textit{2019}\\
+       \vspace*{3\baselineskip}
+       \textit{Release:}\\
+       \textit{\input{version}}
+    \end{center}
+    \vspace*{\stretch{2.0}}
+ \end{titlepage}
+
 \tableofcontents
 
 \chapter*{Preface}
 \input{chapters/preface}
 
-\chapter{Introduction}
+\chapter*{Introduction}
 \input{chapters/introduction}
+
+\chapter{Linear Algebra}
+\input{chapters/linear_algebra}
 
 \chapter{Probability}
 \input{chapters/probability}
 
 \chapter{Statistical Inference}
 \input{chapters/inference}
+
+\chapter{Numerical Methods}
+\input{chapters/num_methods}
 
 \appendix
 \chapter{Appendix}
