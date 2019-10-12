@@ -1,36 +1,39 @@
-This chapter will focus in the procedures to analyze a phenomena of which some information is unknown. Until now,
-we had analyzed problems and experiments in which the whole structure of the problem is known before. But, what
-happen when we couldn't know the probabilities related with all events? There is any approach to overcome this?
-Someone could just think, "Well, lets perform the experiment $n$ times and let's see what happen."\\
+This chapter will focus in the procedures to analyze a phenomena of which some
+information is unknown. Until now, we had analyzed problems and experiments in
+which the whole structure of the problem is known before. But, what happen when
+we couldn't know the probabilities related with all events? There is any
+approach to overcome this? Someone could just think, "Well, lets perform the
+experiment $n$ times and let's see what happen."\\
 
-This approach is the one we are going to follow in this chapter, and in it, it's analyzed the problems and benefits
-of performing such approach. The only prior we have to take in to account is that 
-\textbf{all random phenomena follows an underlying probability function}. With this in mind. Let's start defining in 
-a formal way "perform the experiment $n$ times"
+This approach is the one we are going to follow in this chapter, and in it, it's
+analyzed the problems and benefits of performing such approach. The only prior
+we have to take in to account is that \textbf{all random phenomena follows an
+underlying probability function}. With this in mind. Let's start defining in a
+formal way "perform the experiment $n$ times"
 
 \subsection{Parametric Family of Distributions}
 Let $F$ be a p.d.f. with parameter $\theta$\\
 
-Usually, for some random experiments, the trials could give us some information about the shape of the underlying
-probability function $F$ of the experiment. In practice, $F$ is not exactly know, but we know that his parameter 
-$\theta$ model his shape. So, we can know that $F$ belongs to a set or \textit{parametric family of distributions}
-$\{F(\;\cdot\;;\theta)\; |\; \theta \in \Theta\}$.\\
+Usually, for some random experiments, the trials could give us some information
+about the shape of the underlying probability function $F$ of the experiment. In
+practice, $F$ is not exactly know, but we know that his parameter $\theta$ model
+his shape. So, we can know that $F$ belongs to a set or \textit{parametric
+family of distributions} $\{F(\;\cdot\;;\theta)\; |\; \theta \in \Theta\}$.\\
 
-Because our objective is to know more about the real $F$ we need to perform some procedures in order to \textit{infer}
-the real value of $\theta$. If we achieve to infer the real value, or at least, an approximately one, then we could find,
-a good approximation of $F$ inside his family of distributions. In order to extract this information about $F$ we need
-to perform independent realizations of the experiment related with $F$. With this extracted knowledge we could perform
-inference over $F$ or his parameter $\theta$.\\
+Because our objective is to know more about the real $F$ we need to perform some
+procedures in order to \textit{infer} the real value of $\theta$. If we achieve
+to infer the real value, or at least, an approximately one, then we could find,
+a good approximation of $F$ inside his family of distributions. In order to
+extract this information about $F$ we need to perform independent realizations
+of the experiment related with $F$. With this extracted knowledge we could
+perform inference over $F$ or his parameter $\theta$.\\
 
-The fact that we perform independent repetitions of the experiment means that, for each repetition of the experiment, 
-we have an associated r.v. with the same distribution $F$. This is called, \textit{simple random sample}.
+The fact that we perform independent repetitions of the experiment means that,
+for each repetition of the experiment, we have an associated r.v. with the same
+distribution $F$. This is called, \textit{simple random sample}.
 
 \subsection{Types of estimation (Inference)}
-<<<<<<< HEAD
-\todo[inline]{review the taxonomy and structure to be the same in the whole book}
-=======
 \todo[inline]{Review the taxonomy and refactor to be the same in the whole book}
->>>>>>> master
 \begin{itemize}
     \item Model Based (exact, approximated)
     \item Sampling Based
@@ -38,15 +41,18 @@ we have an associated r.v. with the same distribution $F$. This is called, \text
 \end{itemize}
 
 \subsection{Random Sample}
-A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a collection of r.v. $(X_1, X_2,\dots,X_n)$ that are 
-\textbf{independent and identically distributed (i.i.d.)} and all of them follows the same distribution $F$\\
+A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a
+collection of r.v. $(X_1, X_2,\dots,X_n)$ that are \textbf{independent and
+identically distributed (i.i.d.)} and all of them follows the same distribution
+$F$\\
 
 Because the random variables are independent, the c.d.f. of the sample is,
 \[ F_X(x_1,x_2,\dots,x_n) = F(X_1)F(x_2)\dots F(x_n) \]
 
 \subsection{Statistic}
-A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n) \rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ 
-is the dimension of the statistic. For example:
+A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n)
+\rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ is the dimension of the
+statistic. For example:
 \begin{itemize}
     \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}X_i \triangleq \bar{X}_n$, this is called \textbf{Sample Mean}
     \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 \triangleq S'^2_n$, this is called \textbf{Sample Variance}
@@ -55,21 +61,27 @@ is the dimension of the statistic. For example:
     \item $T_1(X_1,X_2,\dots,X_n) = \sum_{i=1}^{n} \log{X_i}$
     \item $T_1(X_1,X_2,\dots,X_n) = (X_{(1)}, X_{(n)})$
 \end{itemize} 
-All these statistics have dimension $k=1$ except the last with $k=2$. The distribution induced by the statistic $T$ is called the 
-\textit{sampling distribution} of $T$, since it depends on the distribution of the sample.
+All these statistics have dimension $k=1$ except the last with $k=2$. The
+distribution induced by the statistic $T$ is called the \textit{sampling
+distribution} of $T$, since it depends on the distribution of the sample.
 
 \subsection{Estimators or Point Estimators}
-An estimator is an statistic that tries to estimate the value of a parameter $\theta$ that belongs to the distribution of the variable
-$X$. Thus,\\
+An estimator is an statistic that tries to estimate the value of a parameter
+$\theta$ that belongs to the distribution of the variable $X$. Thus,\\
 
-Let $X \sim F(\cdot\;;\;\theta)$ where $\theta$ is a parameter vector with possibles values in the \textit{parameter space} $\Theta$.
-An estimator $\hat{\theta}_n$ of $\theta$ is a statistic $\hat{\theta}_n(X_1,\dots,X_n)$ with values also in $\Theta$ 
+Let $X \sim F(\cdot\;;\;\theta)$ where $\theta$ is a parameter vector with
+possibles values in the \textit{parameter space} $\Theta$. An estimator
+$\hat{\theta}_n$ of $\theta$ is a statistic $\hat{\theta}_n(X_1,\dots,X_n)$ with
+values also in $\Theta$ 
 
-To clarify with a example, in the real world many r.v. follows a normal distribution with mean $\mu \in \mathbb{R}$ and variance 
-$\sigma^2 \in \mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the distribution of a r.v. belong to a 
-normal family of distributions $\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$. Knowing this, it is said 
-that the \textbf{sample mean} $\bar{X}$ and the \textbf{sample variance} $S^2$ are good estimators of the distribution mean $\mu$ 
-and distribution variance $\sigma^2$.
+To clarify with a example, in the real world many r.v. follows a normal
+distribution with mean $\mu \in \mathbb{R}$ and variance $\sigma^2 \in
+\mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the
+distribution of a r.v. belong to a normal family of distributions
+$\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$.
+Knowing this, it is said that the \textbf{sample mean} $\bar{X}$ and the
+\textbf{sample variance} $S^2$ are good estimators of the distribution mean
+$\mu$ and distribution variance $\sigma^2$.
 
 \begin{table}[H]
     \centering
@@ -77,43 +89,42 @@ and distribution variance $\sigma^2$.
     Population Parameter    & Sample Estimator                          \\
     $p = P(X=1)$            & $\hat{p}_n = \frac{1}{n}\sum_{i=1}^n X_i$ \\
     $\mu = \mathbb{E}[X]$   & $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ \\
-    $\sigma^2 = V[X]$       & $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $
+    $\sigma^2 = V[X]$       & $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n}
+    (X_i-\bar{X})^2 $
     \end{tabular}
 \end{table}
 
 \subsection{Biased and Unbiased Estimator}
-<<<<<<< HEAD
-\todo{Add biased section}
-=======
 \todo[inline]{Write all this, probably it will go in other section}
->>>>>>> master
 
 \section{Exact inference under Normal Distributions}
 \textbf{Sampling distributions in Normal Populations}\\
-The sample mean $\bar{X}$ and sample variance $S^2$ estimators play an important role in statistical inference, since both are “good” estimators
-of $\mu$ and $\sigma^2$, respectively. As a consequence, it is important to obtain their sampling distributions in order to know their random behaviors. 
-We will do so under the assumption of normal populations.
+The sample mean $\bar{X}$ and sample variance $S^2$ estimators play an important
+role in statistical inference, since both are “good” estimators of $\mu$ and
+$\sigma^2$, respectively. As a consequence, it is important to obtain their
+sampling distributions in order to know their random behaviors. We will do so
+under the assumption of normal populations.
 
 \subsection{Expected value and Variance of the sample mean}
-Let $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ be the sample mean. Then, it holds,
+Let $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ be the sample mean. Then, it
+holds,
 \[ \mathbb{E}[\bar{X}_n] = \mu,\;\;\; V[\bar{X}_n] = \frac{\sigma^2}{n} \]
 
 \subsection{Expected value of the sample variance}
-Let $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $ be the sample variance. Then, it holds,
+Let $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $ be the sample
+variance. Then, it holds,
 \[ \mathbb{E}[S'^2_n] = \sigma^2 \]
 
 \subsection{Logarithmic Distribution Transformations}
-<<<<<<< HEAD
-\todo{review this}
-=======
 \todo[inline]{Review all this}
->>>>>>> master
-If we take a constant $k$ and perform a logarithmic transformation of the sample distribution $\bar{X}_n$ with this constant. For a fixed $k$ it holds,
+If we take a constant $k$ and perform a logarithmic transformation of the sample
+distribution $\bar{X}_n$ with this constant. For a fixed $k$ it holds,
 \[ \log(\bar{X}_n + k) \sim \mathcal{N}(\mu, \sigma^2) \]
 
 \subsection{Sample Mean of Normal Distribution}
-Let $(X_1,\dots,X_n)$ a s.r.s. of size $n$ of a r.v. $\mathcal{N}(\mu,\sigma^2)$. Then, the \textbf{sample mean} $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$
-satisfies,
+Let $(X_1,\dots,X_n)$ a s.r.s. of size $n$ of a r.v.
+$\mathcal{N}(\mu,\sigma^2)$. Then, the \textbf{sample mean} $\bar{X}_n =
+\frac{1}{n}\sum_{i=1}^n X_i$ satisfies,
 \[ \bar{X} \sim \mathcal{N}(\mu,\frac{\sigma^2}{n}) \]
 
 \subsection{Z statistic or Standarization}
@@ -121,15 +132,17 @@ The $Z$ statistic is obtained when the sample mean is standarizated,
 \[ Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
 
 \subsection{Chi-Square Distribution}
-A Chi-square distribution $\mathcal{X}_n^2$ with $n$ degrees of freedom, is the distribution that gives the sum of $n$ independent r.v. $Z_1,\dots,Z_n$ all of
+A Chi-square distribution $\mathcal{X}_n^2$ with $n$ degrees of freedom, is the
+distribution that gives the sum of $n$ independent r.v. $Z_1,\dots,Z_n$ all of
 them with $\mathcal{N}(0,1)$ distributions. Thus,
-\[ \sum_{i=1}^n Z_i^2 \sim \mathcal{X}_n^2 \]
-and it holds that $\mathcal{X}^2_n = $Gamma$(n/2,2)$
+\[ \sum_{i=1}^n Z_i^2 \sim \mathcal{X}_n^2 \] and it holds that $\mathcal{X}^2_n
+= $Gamma$(n/2,2)$
 
 \subsection{Fisher's Theorem}
-Let $(X_1,\dots,X_n)$ be a s.r.s of r.v. that follows $\mathcal{N}(\mu,\sigma^2)$. Then,
-\[ \frac{(n-1)S'^2_n}{\sigma^2} = \sum_{i=1}^{n} (\frac{X_i - \hat{X}_n}{\sigma})^2 \sim \mathcal{X}_{n-1}^2 \]
-and
+Let $(X_1,\dots,X_n)$ be a s.r.s of r.v. that follows
+$\mathcal{N}(\mu,\sigma^2)$. Then,
+\[ \frac{(n-1)S'^2_n}{\sigma^2} = \sum_{i=1}^{n} (\frac{X_i -
+\hat{X}_n}{\sigma})^2 \sim \mathcal{X}_{n-1}^2 \] and
 \begin{center}
     $\hat{X}_n$ and $\mathcal{X}_n^2$ are independent
 \end{center}
@@ -138,43 +151,51 @@ and
 \todo[inline]{diapo 2.21}
 
 \subsection{Student's Distribution}
-Let $X \sim \mathcal{N}(0,1)$ and $Y \sim \mathcal{X}_v^2$ be independent. The distribution of the r.v. 
-\[ T = \frac{X}{\sqrt{Y/v}} \]
-is a Student's $t_v$ with $v$ degrees of freedom
+Let $X \sim \mathcal{N}(0,1)$ and $Y \sim \mathcal{X}_v^2$ be independent. The
+distribution of the r.v. 
+\[ T = \frac{X}{\sqrt{Y/v}} \] is a Student's $t_v$ with $v$ degrees of freedom
 
 \subsection{T statistic}
-Let $(X_1,\dots,X_n)$ a s.r.s. of a r.v. that follows a $\mathcal{N}(\mu,\sigma^2)$. Then, a $T$ statistic is,
+Let $(X_1,\dots,X_n)$ a s.r.s. of a r.v. that follows a
+$\mathcal{N}(\mu,\sigma^2)$. Then, a $T$ statistic is,
 \[ T = \frac{\bar{X_n}-\mu}{S'^2_n / \sqrt{n}} \sim t_{n-1}\]
 
 \subsection{Snedecor's Distribution}
-Let $X_1 \sim \mathcal{X}_{v_1}^2$ and $X_2 \sim \mathcal{X}_{v_2}^2$ be independent. The distribution of the r.v.
-\[ F = \frac{X_1/v_1}{X_2/v_2} \]
-is a Snedecor's $F$ distribution with $v_1$ degrees of freedom in the numerator, and $v_2$ degrees of freedom in the denominator. It's denoted $\mathcal{F}_{v_1,v_2}$
+Let $X_1 \sim \mathcal{X}_{v_1}^2$ and $X_2 \sim \mathcal{X}_{v_2}^2$ be
+independent. The distribution of the r.v.
+\[ F = \frac{X_1/v_1}{X_2/v_2} \] is a Snedecor's $F$ distribution with $v_1$
+degrees of freedom in the numerator, and $v_2$ degrees of freedom in the
+denominator. It's denoted $\mathcal{F}_{v_1,v_2}$
 
 \subsubsection{Note:}
 \[ F_{1,v} = t^2_v \]
 
 \subsection{F statistic}
-Let $(X_1,\dots,X_{n_1})$ be a s.r.s. of a $\mathcal{N}(\mu_1,\sigma^2_1)$ with sample variance $S'^2_n$. Let $(Y_1,\dots,Y_{n_2})$ be a different s.r.s. of a 
-$\mathcal{N}(\mu_2,\sigma^2_2)$ with sample variance $S'^2_2$. Let the first and the second distributions be independent. Then,
-\[ F = \frac{S'^2_1/\sigma^2_1}{S'^2_2/\sigma^2_2} \sim \mathcal{F}_{n_1-1,n_2-1}\]
+Let $(X_1,\dots,X_{n_1})$ be a s.r.s. of a $\mathcal{N}(\mu_1,\sigma^2_1)$ with
+sample variance $S'^2_n$. Let $(Y_1,\dots,Y_{n_2})$ be a different s.r.s. of a
+$\mathcal{N}(\mu_2,\sigma^2_2)$ with sample variance $S'^2_2$. Let the first and
+the second distributions be independent. Then,
+\[ F = \frac{S'^2_1/\sigma^2_1}{S'^2_2/\sigma^2_2} \sim
+\mathcal{F}_{n_1-1,n_2-1}\]
 
 \section{Large Sample Inference}
 What happens when we can't ensure that the underlying distribution is a normal?
 
 \subsection{Convergence in distribution}
 The sequence of r.v. converges in distribution to the r.v. $X$ if,
-\[ \lim_{x\rightarrow\infty}F_{X_n}(x) = F_X(x) \]
-for all the points $x$ where $F_X(x)$ is continuous. This is denoted as,
+\[ \lim_{x\rightarrow\infty}F_{X_n}(x) = F_X(x) \] for all the points $x$ where
+$F_X(x)$ is continuous. This is denoted as,
 \[ X_n \xrightarrow{d} X \]  
 
 \subsection{Central Limit Theorem}
-Let $X_1,\dots,X_n$ i.i.d. r.v. with expectation $\mathbb{E}[X_i] = \mu$ and variance $V[X_i]=\sigma^2 < \infty$. Then, the c.d.f. of the r.v. converges to the c.d.f 
-of a $\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
-\[ Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1)\]
+This is probabilly one of the most import theorems Let $X_1,\dots,X_n$ i.i.d.
+r.v. with expectation $\mathbb{E}[X_i] = \mu$ and variance $V[X_i]=\sigma^2 <
+\infty$. Then, the c.d.f. of the r.v. converges to the c.d.f of a
+$\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
+\[ Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d}
+\mathcal{N}(0,1)\]
 
 
-<<<<<<< HEAD
 \textbf{Summary}\\
 \[
 (X_1,\dots,X_n)
@@ -187,8 +208,6 @@ of a $\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
         \end{cases}
 \end{cases}
 \]
-=======
->>>>>>> master
 
 
 
