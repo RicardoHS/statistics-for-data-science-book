@@ -10,10 +10,23 @@
 \usepackage{multicol} %for multicolumns
 \usepackage{cancel} %to cancel math terms
 \usepackage{float} % to use the H param in tables and fix his position
+\usepackage{hyperref} % to make listofcontent clickable
+
+%%%%%%%%%%%%%%%%%%%%%%% list of packages to remove before release
+\usepackage[figcolor=white]{todonotes}
+%\todo[inline]{A todonote placed in the text}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 \addbibresource{bib/biblatex.bib}
 \graphicspath{ {./images/} }
 \restylefloat{table} % allow the tables to use the H param
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \addbibresource{bib/biblatex.bib}
 
@@ -32,6 +45,9 @@
     \vspace*{\stretch{2.0}}
  \end{titlepage}
 
+%%%%%%%%%%%%%%%%%%%%%% to remove before release
+\listoftodos
+%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 
 \chapter*{Preface}
