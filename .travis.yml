@@ -2,7 +2,9 @@ sudo: required
 language: generic
 services: docker
 script:
-- $TRAVIS_BUILD_DIR/generate_tex_version.sh
+- $TRAVIS_BUILD_DIR/scripts/build/generate_tex_version.sh
+- python $TRAVIS_BUILD_DIR/scripts/images/images.py
+- R -f $TRAVIS_BUILD_DIR/scripts/images/images.r
 - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic
   main.tex"
