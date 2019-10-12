@@ -94,9 +94,6 @@ $\mu$ and distribution variance $\sigma^2$.
     \end{tabular}
 \end{table}
 
-\subsection{Biased and Unbiased Estimator}
-\todo[inline]{Write all this, probably it will go in other section}
-
 \section{Exact inference under Normal Distributions}
 \textbf{Sampling distributions in Normal Populations}\\
 The sample mean $\bar{X}$ and sample variance $S^2$ estimators play an important
@@ -127,8 +124,8 @@ $\mathcal{N}(\mu,\sigma^2)$. Then, the \textbf{sample mean} $\bar{X}_n =
 \frac{1}{n}\sum_{i=1}^n X_i$ satisfies,
 \[ \bar{X} \sim \mathcal{N}(\mu,\frac{\sigma^2}{n}) \]
 
-\subsection{Z statistic or Standarization}
-The $Z$ statistic is obtained when the sample mean is standarizated,
+\subsection{Z statistic or Standardization}
+The $Z$ statistic is obtained when the sample mean is standardized,
 \[ Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
 
 \subsection{Chi-Square Distribution}
@@ -188,33 +185,258 @@ $F_X(x)$ is continuous. This is denoted as,
 \[ X_n \xrightarrow{d} X \]  
 
 \subsection{Central Limit Theorem}
-This is probabilly one of the most import theorems Let $X_1,\dots,X_n$ i.i.d.
-r.v. with expectation $\mathbb{E}[X_i] = \mu$ and variance $V[X_i]=\sigma^2 <
-\infty$. Then, the c.d.f. of the r.v. converges to the c.d.f of a
-$\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
+\todo[inline]{explain much better this theorem}
+Let $X_1,\dots,X_n$ i.i.d. r.v. with expectation $\mathbb{E}[X_i] = \mu$ and
+variance $V[X_i]=\sigma^2 < \infty$. Then, the c.d.f. of the r.v. converges to
+the c.d.f of a $\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
 \[ Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d}
 \mathcal{N}(0,1)\]
 
-
-\textbf{Summary}\\
-\[
-(X_1,\dots,X_n)
-\begin{cases}
-    \sim \mathcal{N}(\mu, \sigma^2) \Rightarrow \bar{X}_n \sim \mathcal{N}(\mu, \sigma^2/n)\\
-    \nsim \mathcal{N}(\mu, \sigma^2)
-        \begin{cases}
-            n < 30 \Rightarrow \text{?}\\
-            n \geq 30 \Rightarrow \bar{X}_n \cong \mathcal{N}(\mu, \sigma^2/n)
-        \end{cases}
-\end{cases}
-\]
-
-
-
-
-
-
+\begin{tcolorbox}
+    \textbf{Summary}\\
+    \[
+    (X_1,\dots,X_n)
+    \begin{cases}
+        \sim \mathcal{N}(\mu, \sigma^2) \Rightarrow \bar{X}_n \sim \mathcal{N}(\mu, \sigma^2/n)\\
+        \nsim \mathcal{N}(\mu, \sigma^2)
+            \begin{cases}
+                n < 30 \Rightarrow \text{?}\\
+                n \geq 30 \Rightarrow \bar{X}_n \cong \mathcal{N}(\mu, \sigma^2/n)
+            \end{cases}
+    \end{cases}
+    \]
+\end{tcolorbox}
+In general, when inference, if the original distribution follows a normal and
+the sample size is small, we need to use the Student's t distribution.
+Otherwise, use the normal. \todo{explain better}
 
 
+\section{Properties of estimators}
+\subsection{Biased and Unbiased}
+Given an estimator $\hat{\theta}$ the quantity 
+\[ \textbf{B}[\hat{\theta}] = \mathbb{E}[\hat\theta] - \theta \] is the bias of
+the estimator. It is said that a estimator with zero bias is unbiased.
+$\mathbb{E}[\hat\theta] = \theta$
+\missingfigure{two explanatory dartboard}
 
+\subsection{Estimation Error}
+Once observed the value of $\hat{\theta}$ of a sample the estimation error is
+the quantity $\hat{\theta}_n - \theta$. Note that the estimation error is
+usually different from zero. The bias is the mean estimation error.
+\[ \textbf{B}[\hat{\theta}] = \mathbb{E}[\hat{\theta}_n] - \theta =
+\mathbb{E}[\hat{\theta}_n - \theta] \]
 
+\subsubsection{Error measures}
+There are lots of error measurements and each one is used for different
+implications. The most commons are:
+\begin{itemize}
+    \item Mean Absolute Error: $\text{MSE} = \mathbb{E}[|\hat{\theta}_n -
+    \theta|]$
+    \begin{tcolorbox}
+        Note that \[ \text{MSE} = \textbf{B}^2(\hat{\theta}_n) +
+        V(\hat{\theta}_n) \]
+    \end{tcolorbox}
+    \item Mean Square Error: $\text{MAE} = \mathbb{E}[(\hat{\theta}_n -
+    \theta)^2]$
+\end{itemize}
+\todo[inline]{Add more error measurements and his implications}
+
+\subsubsection{Estimator selection}
+When we have to choose between two estimators $\hat{\theta}_{n,1}$ or
+$\hat{\theta}_{n,2}$
+\begin{itemize}
+    \item If both are unbiased, choose the one with smallest variance.
+    \item If at leas is biased, then choose the one with smallest error (e.g.
+    MSE).
+\end{itemize}
+
+\subsection{Invariant}
+\todo[inline]{add more invariant properties}
+\subsubsection{Translation Invariant}
+It is said that a estimator is translation invariant when it satisfies
+\[ \hat{\theta}(X_1 + c,\dots,X_n + c) = \hat{\theta}(X_1,\dots,X_n) +
+c,\;\;\;\; \forall c \in \mathbb{R}\]
+\todo{example}
+
+\subsubsection{Scale Invariant}
+It is said that a estimator is scale invariant when it satisfies
+\[ \hat{\theta}(cX_1,\dots,cX_n) = c\hat{\theta}(X_1,\dots,X_n) ,\;\;\;\;
+\forall c > 0 \]
+\todo{example}
+
+\subsection{Consistency}
+The idea of consistency is related with the size of the sample. This property
+apply when the probability that the estimator $\hat{\theta}$ decay from the real
+$\theta$ when $n\rightarrow\infty$. More formally \todo{add explanatory plot}
+\[ P(|\bar{X}_n - \mu|) > 1 \;\;\text{ when }\;\; n\rightarrow\infty\]
+
+\subsubsection{Weak Consistency}
+Let $X$ be a r.v. with induced probability $P( \cdot ) = P(\cdot\;;\theta)$. Let
+$(X_1,\dots,X_n)$ be a s.r.s of $X$, and let $\hat{\theta}_n =
+\hat{\theta}_n(X_1,\dots,X_n)$ be an estimator of $\theta$. The sequence
+$\{\hat{\theta}_n,\; n \in \mathbb{N}\}$ is consistent (or weak consistent, or
+consistent in probability) for $\theta$, denoted
+$\hat{\theta}\xrightarrow{P}\theta$, if and only if,
+\[ \lim_{n\rightarrow\infty} P(|\hat{\theta}_n - \theta| > \epsilon)=0,\;\;\;
+\forall \epsilon>0\]
+
+\subsubsection{Consistency in squared mean}
+The following definition is stronger than the previous one,\\
+A sequence of estimators $\{\hat{\theta}_n, n \in \mathbb{N}\}$ is consistent in
+squared mean for $\theta$, denoted $\hat{\theta}\xrightarrow{sq.m.}\theta$, if
+it verifies
+\[ \lim_{n\rightarrow\infty} \text{MSE}(\hat{\theta}_n) = 0 \] or equivalently,
+\[ \lim_{n\rightarrow\infty} \textbf{B}(\hat{\theta}_n) = 0 \;\;\;
+\text{and}\;\;\; \lim_{n\rightarrow\infty} V(\hat{\theta}_n) = 0 \] This theorem
+also states that,
+\[ \hat{\theta}_n \xrightarrow{sq.m.}\theta \Rightarrow \hat{\theta}_n
+\xrightarrow{P}\theta \]
+
+\section{Law of Large Numbers}
+The law of large numbers (LLN) is along with the central limit theorem the two
+key laws in probability. It states that when the estimator is consistent and the
+sample size is enough big, the sample mean equals the population mean. More
+formally,
+\subsubsection{Definition of LLN}
+Let $(X_1,\dots,X_n)$ be a s.r.s. of a r.. $X$ with mean $\mu$ and variance
+$\sigma^2<\infty$. Then,
+\[ \bar{X}_n \xrightarrow{P} \mu \]
+
+\section{Algebra of Consistency}
+It is stated that any continuous transformation of a consistent estimator is
+consistent for the same transformation of the parameter. We can define formally
+in two ways,\\
+
+\subsubsection{Single estimator definition}
+Let $\hat{\theta}\xrightarrow{P}\theta$ and let $g(x)$ be a continuous at
+$x=\theta$. Then $g(\hat{\theta}_n) \xrightarrow{P}g(\theta)$
+\subsubsection{Multiple estimator definition}
+Let $\hat{\theta}\xrightarrow{P}\theta$ and
+$\hat{\theta}'\xrightarrow{P}\theta'$. Let $g(x,y)$ be a continuous at
+$(x,y)=(\theta,\theta')$. Then $g(\hat{\theta}_n,\hat{\theta}_n')
+\xrightarrow{P}g(\theta,\theta')$
+
+\subsubsection{Corollary}
+From this two definitions we can summarize multiples algebras between
+estimators.
+\begin{itemize}
+    \item $\hat{\theta}_n + \hat{\theta}_n' \xrightarrow{P} \theta + \theta'$
+    \item $\hat{\theta}_n\hat{\theta}_n' \xrightarrow{P} \theta\theta'$
+    \item $\hat{\theta} / \hat{\theta}_n' \xrightarrow{P} \theta/ \theta' \;\;\;
+    \text{if } \theta' \neq 0$
+    \item $\sqrt{\hat{\theta}_n} \xrightarrow{P} \sqrt{\theta} \;\;\;\;
+    \text{if}\; P(\hat{\theta}_n \geq 0) = 1$
+    \item $a_n\hat{\theta}_n \xrightarrow{P} a\theta \;\;\; \text{with} a_n$
+    being a sequence of constants. 
+\end{itemize}
+
+\subsection{Slutsky's Theorem}
+Let $U_n$ and $W_n$ be random sequences satisfying
+\[ U_n\xrightarrow{d}\mathcal{N}(0,1),\;\;\;\;\; W_n\xrightarrow{P}1\] Then, it
+holds,
+\[\frac{U_n}{W_n} \xrightarrow{d} \mathcal{N}(0,1)\]
+\todo[inline]{Add asymptotic normality of T stat example}
+
+\section{Fisher's Information}
+Let $X$ be a continuous r.v. with distribution that depends of $\theta \in
+\Theta \subset \mathbb{R}$. The Fisher's information of $X$ over $\theta$ is
+defined as
+\[ I(\theta) = \mathbb{E}\left[\left(\frac{\partial\log
+f(X;\theta)}{\partial\theta}\right)^2\right] \] for continuous distributions.
+For discrete distributions the definition is the same but replacing the p.d.f
+for the p.m.f (replacing $f(X;\theta) \text{ by } p(X;\theta)$)
+\begin{tcolorbox}
+    Note that
+    \[ \frac{\partial\log f(X;\theta)}{\partial\theta} = \frac{\frac{\partial
+    f(X;\theta)}{\partial\theta}}{f(X;\theta)} \]
+\end{tcolorbox}
+
+This quantity is the relative variation rate of $f$ when varying $\theta$, for a
+realized value $x$ of $X$. It represents the information of $x$ to discriminate
+$\theta$ from a near value $\theta+h$. Fisher’s information is the mean
+information of the r.v. $X$ about $\theta$.
+\todo[inline]{add better and conceptual explanation. Maybe an image too}
+
+\subsection{Fisher's Information of a sample}
+The Fisher's information of a s.r.s $(X_q,\dots,X_n)$ of a continuous r.v. $X$
+over $\theta$ is defined as
+\[ \mathcal{I}_n(\theta) = \mathbb{E}\left[\left(\frac{\partial\log
+f(X_1,\dots,X_n;\theta)}{\partial\theta}\right)^2\right] \] For $X$ discrete
+just replace $f(\cdot;\theta)$ by the joint p.m.f. $p(\cdot;\theta)$
+
+\subsubsection{Fisher's equality}
+\todo[inline]{search and add information about this equality}
+Under certain regularity assumptions,
+\[ \mathcal{I}_n(\theta) = nI(\theta) \]
+
+\subsubsection{Frechet-Cr\'amer-Rao lower bound}
+\todo{Check and write this assumptions}Under certain regularity assumptions, any
+unbiased estimator $\hat{\theta}_n=\hat{\theta}_n(X_1,\dots,X_n)$ of $\theta$
+satisfies
+\[ V(\hat{\theta}_n) \geq 1 / \mathcal{I}_n(\theta)\]
+
+\subsection{Efficient estimator}
+An unbiased estimator $\hat{\theta}_n$ of $\theta$ that satisfies
+$V(\hat{\theta}_n)=1 / \mathcal{I}_n(\theta)$ is called efficient.
+\todo{add example}
+
+\section{Robust Estimators}
+\todo[inline]{search more info about robust estimators and complete this section}
+In real problems it is common that the data contains some contamination in form
+of measurements errors or other problems. In statistics it is said that an
+estimator $\hat{\theta}$ is robust if it preserves good properties (small bias
+and variance) even if the sample is contaminated.
+
+The theory of statistical robustness is deep. For this, we are going to use this
+widely-used contamination model for $f(\;\cdot;\theta)$.
+\[ (1-\epsilon)f(x;\theta) + \epsilon g(x),\;\;\;\; x \in \mathbb{R},\\
+\text{ with } 0<\epsilon<0.5 \\ \text{ and arbitrary p.d.f }\;\; g\]
+
+\subsection{Outliers}
+\todo[inline]{rewrite this whole part, because tis copy-paste from another book}
+The concept of outlier is intimately related with robustness. Outliers are
+“abnormal” observations in the sample that seem very unlikely for the assumed
+distribution model or are remarkably different from the rest of sample
+observations. Outliers can be originated by measurement errors, exceptional
+circumstances, changes in the data generating process, etc.
+
+There are two main approaches for preventing outliers or contamination to
+undermine the estimation of $\theta$:
+\begin{enumerate}
+    \item Detect the outliers through a diagnosis of the model fit and
+    re-estimate the model once the outliers have been removed.
+    \item Employ a robust estimator
+\end{enumerate}
+
+The first approach is the traditional one and is still popular due to its
+simplicity. Besides, it allows us to employ non-robust efficient estimators that
+tend to be simpler to compute, provided the data has been cleared adequately.
+However, this procedure may quickly run into problems, since, for example,
+detecting outliers in higher dimensions is usually complicated and this
+detection may require manual inspection of the data.
+
+In addition, robust estimators may be needed even when performing the first
+approach, as the following example illustrates. A simple rule to detect outliers
+in a normal population is to flag as outliers the observations that lie further
+away than $3\sigma$ from the mean $\mu$, since those observations are highly
+extreme. Since their probability is $0.0027$, we expect to flag as an outlier
+$1$ out of $371$ observations if the data comes from a perfectly valid normal
+population. However, applying this procedure entails estimating first $\mu$ and
+$\sigma$ from the data. But the conventional estimators, sample mean and
+variance, are also very sensitive to outliers, and therefore their resulting
+values may hide the existence of outliers. Therefore, it is better to rely on a
+robust estimator, which brings us back to the second approach. As a consequence,
+it is sometimes preferred to employ robust estimators from the beginning.
+
+The next definition introduces a simple measure of the robustness of an
+estimator.
+
+\subsection{Finite-sample breakdown point}
+The breakdown point of an estimator can be interpreted as the maximum fraction
+of the sample that can be changed without modifying the value of $\hat{\theta}$
+to an aribtrary large value.
+
+\todo[inline]{add better explanation, examples of robust estimators, trimmed mean, etc}
+
+\section{Estimation methods}
+Method of moments and maximum likelihood method.
