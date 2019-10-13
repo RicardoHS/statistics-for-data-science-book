@@ -564,8 +564,7 @@ f_X(x)=\begin{cases}
 
 \begin{tcolorbox}
     Note that the above definition is similar to:
-    \[ P(X\in A) = \int_A f_X(x)dx \]
-    For $A\subset\mathbb{R}$ a borelian set.
+    \[ P(X\in A) = \int_A f_X(x)dx \] For $A\subset\mathbb{R}$ a borelian set.
 \end{tcolorbox}
 
 \missingfigure{explanatory p.d.f.}
@@ -582,24 +581,26 @@ f_X(x)=\begin{cases}
 \end{itemize}
 
 \begin{tcolorbox}
-    In order to compute the probability that $X$ lies in an interval $[a,b]$ just
+    In order to compute the probability that $X$ lies in an interval $[a,b]$
+    just
     \[ P(a\leq X\leq b) = F_X(b)-F_X(a) \]
 \end{tcolorbox}
 
 \subsubsection{Relationship between p.d.f and c.d.f.}
-It's important to note that the c.d.f. is just the primitive of the p.d.f. and thus, the
-p.d.f. is the derivative of the c.d.f.
+It's important to note that the c.d.f. is just the primitive of the p.d.f. and
+thus, the p.d.f. is the derivative of the c.d.f.
 \[ F_X(x)=\int_{-\infty}^x f_X(t)dt\;\;\;\;\;\;\;\text{ and }\;\;\;\;\;\;\;
 f_X(x) = F_X'(x)  \]
 
 \subsection{Mean, variance and quantiles}
 \subsubsection{Mean}
-\[ \mathbb{E}[X]  = \int_{-\infty}^\infty xf_X(x)dx\]
-The mean holds the same properties as it is does in his discrete form
+\[ \mathbb{E}[X]  = \int_{-\infty}^\infty xf_X(x)dx\] The mean holds the same
+properties as it is does in his discrete form
 \begin{itemize}
     \item $\mathbb{E}[aX+b] = a\mathbb{E}[X]+b$
     \item $\mathbb{E}[g(X)] = \int g(x)f_X(x)dx$
-    \item $\mathbb{E}[(X-\mathbb{E}[X])^2] = \min_{x\in\mathbb{R}} \mathbb{E}[(X-x)^2]$
+    \item $\mathbb{E}[(X-\mathbb{E}[X])^2] = \min_{x\in\mathbb{R}}
+    \mathbb{E}[(X-x)^2]$
 \end{itemize}
 
 \subsubsection{Variance}
@@ -619,38 +620,34 @@ Properties
 \section{Continuous Random Distributions}
 \subsection{Uniform Distribution}
 \todo[inline]{write description}
-\[ X \sim U(a,b) \]
-with
+\[ X \sim U(a,b) \] with
 \[f_X(x)=
     \begin{cases}
         \frac{1}{b-a}\;\;\;\;\;\text{ if } a\leq x \leq b\\
         0\;\;\;\;\;\;\;\;\;\;\text{otherwise}
     \end{cases}
-\]
-and
+\] and
 \[ \mathbb{E}[X]=\frac{a+b}{2},\;\;\;\;\;V[X]=\frac{(b-a)^2}{12} \]
 \missingfigure{pdf and cdf}
 
 \subsection{Exponential distribution}
 Used to measure the time between the occurrence of two events in a poisson
-distribution $X_t\sim\mathcal{P}(t\lambda)$ where $t$ is the number of events in $[0,t]$.
+distribution $X_t\sim\mathcal{P}(t\lambda)$ where $t$ is the number of events in
+$[0,t]$.
 \todo[inline]{write description}
-\[ T \sim Exp(\lambda) \]
-with c.d.f.
+\[ T \sim Exp(\lambda) \] with c.d.f.
 \[F_T(t)=
     \begin{cases}
         1-e^{-\lambda t}\;\;\;\;\;\text{ if } t\geq 0\\
         0\;\;\;\;\;\;\;\;\;\;\text{ if } t<0
     \end{cases}
-\]
-with p.d.f
+\] with p.d.f
 \[f_T(t)=
     \begin{cases}
         \lambda e^{-\lambda t}\;\;\;\;\;\text{ if } t\geq 0\\
         0\;\;\;\;\;\;\;\;\;\;\text{ if } t<0
     \end{cases}
-\]
-and
+\] and
 \[ \mathbb{E}[T]=\lambda^{-1},\;\;\;\;\;V[T]=\lambda^{-2} \]
 \begin{tcolorbox}
     Lack of memory property
@@ -660,20 +657,20 @@ and
 
 \subsection{Normal Distribution}
 \todo[inline]{write description}
-\[ X \sim \mathcal{N}(\mu,\sigma) \]
-with
+\[ X \sim \mathcal{N}(\mu,\sigma) \] with
 \[
 f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left\{\frac{-(x-\mu)^2}{2\sigma^2}\right\},\;\;
 x\in\mathbb{R} \] 
-if $\mu=0$ and $\sigma=1$ then it is said that $\mathcal{N}$
-is in standard normal and
+if $\mu=0$ and $\sigma=1$ then it is said that $\mathcal{N}$ is in standard
+normal and
 \[ f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\;\;\;\;\; x\in\mathbb{R} \]
 \begin{tcolorbox}
     Note that a linear transformation of a normal is also a normal
     \[aX+b \sim \mathcal{N}(a\mu+b,\;\;\;|a|\sigma)\]
 \end{tcolorbox}
 \begin{tcolorbox}
-    Probably the most important transformation is the one called \textbf{standarization}
+    Probably the most important transformation is the one called
+    \textbf{standarization}
     \[\frac{X-\mu}{\sigma}\sim\mathcal{N}(0,1)\]
 \end{tcolorbox}
 \missingfigure{pdf and cdf}
@@ -681,51 +678,60 @@ is in standard normal and
 \todo[inline]{COMPLETE WITH gamma, beta distributions}
 
 \section{Random Vectors}
-Until now the only distributions that we have seen are in $\mathbb{R}$, or in other words
-in one single dimension. Now we are going to study random variables in more dimensions.
+Until now the only distributions that we have seen are in $\mathbb{R}$, or in
+other words in one single dimension. Now we are going to study random variables
+in more dimensions.
 \subsection{Marginal distributions}
-The distributions of each fo the components of a r.v. alone is referred to as Marginal
-distribution.
+The distributions of each fo the components of a r.v. alone is referred to as
+Marginal distribution.
 
 
  \subsubsection{Random Vector}
- A random vector is a measurable mapping from a sample space $S$ into $\mathbb{R}^d$. For
- example, a bivariate random vector maps $S$ into $\mathbb{R}^2$
+ A random vector is a measurable mapping from a sample space $S$ into
+ $\mathbb{R}^d$. For example, a bivariate random vector maps $S$ into
+ $\mathbb{R}^2$
  \[ (X,Y):S\rightarrow\mathbb{R}^2 \]
 
  \subsubsection{Joint distribution of a r.v.}
-The joint distribution is the one that describes the behavior of all variables that
-compose the random vector. So, since now, we are going to talk about joint distributions
-of two or more random variables.
+The joint distribution is the one that describes the behavior of all variables
+that compose the random vector. So, since now, we are going to talk about joint
+distributions of two or more random variables.
 
 \subsection{Discrete random vectors}
 Let $X, Y$ be two discrete random variables on the same probability space.
 
 \subsubsection{Joint probability mass function}
-\[ p_{X,Y}(x,y)=P(X=x,Y=y) \]
-with $p_{X,Y}(x,y)>0$ and $\sum_x\sum_yp_{X,Y}(x,y)=1$
+\[ p_{X,Y}(x,y)=P(X=x,Y=y) \] with $p_{X,Y}(x,y)>0$ and
+$\sum_x\sum_yp_{X,Y}(x,y)=1$
 \subsubsection{Joint cumulative distribution function}
-\[ F_{X,Y}(x_0,y_0)=P(X\leq x_0,Y\leq y_0) = \sum_{x\leq x_0}\sum_{y\leq y_0}p_{X,Y}(x,y) \]
+\[ F_{X,Y}(x_0,y_0)=P(X\leq x_0,Y\leq y_0) = \sum_{x\leq x_0}\sum_{y\leq
+y_0}p_{X,Y}(x,y) \]
 \subsubsection{Marginal discrete distributions}
 Given $X, Y$ with $p_{X,Y}(x,y)$ his joint probability mass function.
 \begin{itemize}
-    \item \textbf{Marginal p.m.f of X}: $p_X(x)=P(X=x)=\sum_yP(X=x,Y=Y)=\sum_yp_{X,Y}(x,y)$
-    \item \textbf{Marginal p.m.f of Y}: $p_Y(y)=P(Y=y)=\sum_xP(X=x,Y=Y)=\sum_xp_{X,Y}(x,y)$
+    \item \textbf{Marginal p.m.f of X}:
+    $p_X(x)=P(X=x)=\sum_yP(X=x,Y=Y)=\sum_yp_{X,Y}(x,y)$
+    \item \textbf{Marginal p.m.f of Y}:
+    $p_Y(y)=P(Y=y)=\sum_xP(X=x,Y=Y)=\sum_xp_{X,Y}(x,y)$
 \end{itemize}
 
 
 \subsection{Continuous random vectors}
 Let $X, Y$ be two continuous random variables on the same probability space.
 \subsubsection{Joint density mass function}
-\[ f_{X,Y}(x,y)=P(a\leq X \leq b, c\leq Y \leq d) = \int_{a}^b\int_{c}^d f_{X,Y}(x,y)dydx \]
-with $f_{X,Y}(x,y)>0$ and $\int_{-\infty}^\infty\int_{-\infty}^\infty f_{X,Y}(x,y)dydx=1$
+\[ f_{X,Y}(x,y)=P(a\leq X \leq b, c\leq Y \leq d) = \int_{a}^b\int_{c}^d
+f_{X,Y}(x,y)dydx \] with $f_{X,Y}(x,y)>0$ and
+$\int_{-\infty}^\infty\int_{-\infty}^\infty f_{X,Y}(x,y)dydx=1$
 \subsubsection{Joint cumulative distribution function}
-\[ F_{X,Y}(x_0,y_0)=P(X\leq x_0,Y\leq y_0) = \int_{-\infty}^{x_0}\int_{-\infty}^{y_0}f_{X,Y}(x,y)dydx \]
+\[ F_{X,Y}(x_0,y_0)=P(X\leq x_0,Y\leq y_0) =
+\int_{-\infty}^{x_0}\int_{-\infty}^{y_0}f_{X,Y}(x,y)dydx \]
 \subsubsection{Marginal continuous distributions}
 Given $X, Y$ with $f_{X,Y}(x,y)$ his joint density mass function.
 \begin{itemize}
-    \item \textbf{Marginal p.d.f of X}:\\ $f_X(x)=\int_{-\infty}^\infty f_{X,Y}(x,y)dy$
-    \item \textbf{Marginal p.d.f of Y}:\\ $f_Y(y)=\int_{-\infty}^\infty f_{X,Y}(x,y)dx$
+    \item \textbf{Marginal p.d.f of X}:\\ $f_X(x)=\int_{-\infty}^\infty
+    f_{X,Y}(x,y)dy$
+    \item \textbf{Marginal p.d.f of Y}:\\ $f_Y(y)=\int_{-\infty}^\infty
+    f_{X,Y}(x,y)dx$
 \end{itemize}
 
 \todo[inline]{example with image of the diamond distribution}
@@ -749,14 +755,17 @@ $X$ and $Y$ are independent if any of the followings conditions
 \missingfigure{square random vector showing the only true indepence variables}
 
 \subsection{Transformations of random vectors}
-Consider a d-variate r.v. $\textbf{X}=(X_1,\dots,X_d)^t$ (note the bold X) and a function
-$g:\mathbb{R}^d \rightarrow \mathbb{R}^k$ then $\textbf{Y}=g(\textbf{X})$ is a k-variate 
-random vector. Note that if $k=1$ then $Y=g(\textbf{X})$ is a random variable (note that
-the bold Y disappears here).
+Consider a d-variate r.v. $\textbf{X}=(X_1,\dots,X_d)^t$ (note the bold X) and a
+function $g:\mathbb{R}^d \rightarrow \mathbb{R}^k$ then
+$\textbf{Y}=g(\textbf{X})$ is a k-variate random vector. Note that if $k=1$ then
+$Y=g(\textbf{X})$ is a random variable (note that the bold Y disappears here).
 \subsubsection{Mean of a univariate transformation}
 \begin{itemize}
-    \item $\textbf{X}$ discrete: $\mathbb{E}[Y]=\mathbb{E}[g(\textbf{X})]=\sum g(\textbf{x})p_\textbf{X}(\textbf{x})$
-    \item $\textbf{X}$ continuous: $\mathbb{E}[Y]=\mathbb{E}[g(\textbf{X})]=\int_{\mathbb{R}^d} g(\textbf{x})f_\textbf{X}(\textbf{x})d\textbf{x}$
+    \item $\textbf{X}$ discrete: $\mathbb{E}[Y]=\mathbb{E}[g(\textbf{X})]=\sum
+    g(\textbf{x})p_\textbf{X}(\textbf{x})$
+    \item $\textbf{X}$ continuous:
+    $\mathbb{E}[Y]=\mathbb{E}[g(\textbf{X})]=\int_{\mathbb{R}^d}
+    g(\textbf{x})f_\textbf{X}(\textbf{x})d\textbf{x}$
 \end{itemize}
 \subsubsection{Join density mass function of a transformation}
 Is the jacobian matrix
@@ -766,8 +775,8 @@ Is the jacobian matrix
 \todo[inline]{complete}
 
 \subsection{Mean Vector}
-The mean vector of a random vector $\textbf{X}$ is a column vector with components 
-equals to the mean of the components
+The mean vector of a random vector $\textbf{X}$ is a column vector with
+components equals to the mean of the components
 \[ \mu = \mathbb{E}[\textbf{X}] = 
 \begin{pmatrix}
     \mathbb{E}[X_1]\\\mathbb{E}[X_2]\\\vdots\\\mathbb{E}[X_d]
@@ -775,7 +784,7 @@ equals to the mean of the components
 \]
 
 \subsection{Covariance}
-The covariance is a value that measures how one value vary respect the other. Is 
+The covariance is a value that measures how one value vary respect the other. Is
 one of the principal values used to determine if two variables are independent.
 \[ \text{Cov}[X,Y] = \mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}[Y])] =
 \mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y] \]
@@ -787,14 +796,15 @@ The most popular measure of dependency. It's a value in $[-1,1]$
 \[ \rho_{X,Y} = \frac{\text{Cov}[X,Y]}{\sqrt{V[X]V[Y]}} \]
 \missingfigure{picture showing the 4 zones of a correlation}
 \begin{tcolorbox}
-    Note that, if $X$ and $Y$ are independent then $\text{Cov}[X,Y]=0$ and the reverse
-    does not necessary hold. Correlation is not causality.    
+    Note that, if $X$ and $Y$ are independent then $\text{Cov}[X,Y]=0$ and the
+    reverse does not necessary hold. Correlation is not causality.    
 \end{tcolorbox}
 \todo[inline]{add more types of correlations, linear and not linear, rank-corr etc}
 
 \subsection{Covariance matrix}
-Denoted by $\Sigma$ is a square matrix $d \times d$ symmetric positive semidefinite matrix,
-such that the element in position $(i,j)$ is $\text{Cov}[X_i,X_j]$
+Denoted by $\Sigma$ is a square matrix $d \times d$ symmetric positive
+semidefinite matrix, such that the element in position $(i,j)$ is
+$\text{Cov}[X_i,X_j]$
 \todo[inline]{complete}
 
 \subsubsection{Linear transformations}
@@ -809,11 +819,9 @@ such that the element in position $(i,j)$ is $\text{Cov}[X_i,X_j]$
 \missingfigure{descriptive figure with diferent parameters}
 
 \subsection{Bivariate Normal distribution}
-\[ (X_1,X_2)^t \sim \mathcal{N}_2(\mu,\Sigma) \]
-with
-\[ \mu=\begin{pmatrix}\mu_1\\\mu_2\end{pmatrix}\;\;\;\;\;
-    \Sigma=\begin{bmatrix}
-        \sigma_1^2 & \rho_{\sigma_1,\sigma_2}\\
+\[ (X_1,X_2)^t \sim \mathcal{N}_2(\mu,\Sigma) \] with
+\[ \mu=\begin{pmatrix}\mu_1\\\mu_2\end{pmatrix}\;\;\;\;\; \Sigma=\begin{bmatrix}
+    \sigma_1^2 & \rho_{\sigma_1,\sigma_2}\\
         \rho_{\sigma_2,\sigma_1} & \sigma^2_2
     \end{bmatrix}
 \]
@@ -824,3 +832,47 @@ with
 \[ \textbf{X} \sim M(n,\textbf{p}) \]
 \todo[inline]{complete}
 \missingfigure{descriptive figure with diferent parameters}
+
+\section{Mixtures}
+Let $F_1,F_2,\dots,F_k$ be c.d.f. of different distributions and
+$p_1,p_2,\dots,p_k>0$ with $\sum_{i=1}^kp_i=1$, then a new c.d.f. of a mixture
+distribution is defined as
+\[ G(x) = p_1F_1(x) + \dots + p_kF_k(x) \] This new distribution mixes the later
+distributions according to the probability distribution given by
+$p_1,\dots,p_k$. The cdf, density (or probability) mass function, or the random
+number generation can be done directly with the original distributions, BUT the
+quantile function is not straightforwardly computed from the ones of the original
+distributions. \todo{remove this last paragraph?}
+
+\missingfigure{mixture of two normals}
+
+\subsection{Mean and variance}
+If $G=\sum^kp_iF_i$ with mean $\mu$ and variance $\sigma^2$
+\[ \mu = \sum_{i=1}^k p_i\mu_i \;\;\;\;\;
+    \sigma^2 = \sum_{i=1}^k p_i(\mu^2_i+\sigma^2_i)-\mu^2
+\]
+
+\subsection{Uncountable or continuous Mixtures}
+Let $\omega$ be a weight function 
+\[ G(x) = \int_A \omega(a)F_a(x)da \]
+\todo[inline]{complete this}
+
+\section{Some statistics?}
+\todo[inline]{probably move this to inference chapter}
+\subsection{Lorenz curve}
+If $X\geq 0$ 
+\[ L_X(x) = \frac{1}{\mathbb{E}[X]}\int_0^x F^{-1}_X(t)dt \] The Lorenz curve
+represents the proportion of a given characteristic (wealth) earned by the
+fraction $x$ of individuals with the smallest value in the characteristic (poorest
+individuals). \todo{review this and write about his generalized form}
+\missingfigure{lorenz curve}
+
+\subsection{Gini coefficient}
+The Gini index or Gini coefficient equals twice the area between the Lorenz curve
+and the line segment from $(0,0)$ to $(1,1)$
+\[ G(X) = 1-2\int_0^1L_X(t)dt = \frac{\text{GMD}(X)}{\mathbb{E}[X]} \]
+\subsubsection{Gini mean difference}
+Let $X,Y$ be independent and follow the same distribution
+\[ \text{GMD}(X) = \frac{1}{2}\mathbb{E}[|X-Y|] \]
+
+
