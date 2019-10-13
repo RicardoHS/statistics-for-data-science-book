@@ -489,6 +489,59 @@ $k=1,\dots,K$ then
 i=1,\dots,K \]
 
 \subsection{Maximum Likelihood Method}
-This method relies in the believe that whatever happens in the reality is what is more
-probably to happen.
+\todo[inline]{introductory example with unfair toss coin 0.8,0.2}
+This method relies in the believe that whatever happens in the reality is what
+is more probably to happen.
 
+The Maximum Likelihood estimator (MLE) denoted by $\hat{\theta_{\text{MLE}}}$ of
+$\theta$ given the realized sample $(X_1=x_1,\dots,X_n=x_n)$ is the value
+$\hat{\theta}$ that maximizes the likelihood
+\[ L(\hat{\theta};x_1,\dots,x_n) = \max_{\theta\in\Theta}L(\theta;x_1,\dots,x_n)
+\]
+\[ \hat{\theta}_{\text{MLE}} = \arg \max_{\theta\in\Theta}
+L(\theta;x_1,\dots,x_n) \]
+\begin{tcolorbox}
+    Note that the maximum $\hat{\theta}$ of the likelihood is also the maximum
+    of the loglikelihood
+    \[ \ell(\hat{\theta};x_1,\dots,x_n) = \log L(\theta;x_1,\dots,x_n)\] This is
+    because the logarithm is monotonously increasing.
+\end{tcolorbox}
+It's important to remark that when calculating the MLE sometimes is more easy to
+just compute the logMLE.
+
+\subsubsection{Computation of MLE}
+In order to find that maximum likelihood, there are some remarks to take into
+account. If $\Theta$ is finite, the maximum can be found evaluating all possible
+values of $L(\theta;x_1,\dots,x_n)$. If $\Theta$ is infinite and
+$L(\theta;x_1,\dots,x_n)$ is differentiable respect $\theta$, then the solutions
+of the likelihood equations can be calculated
+\[
+\frac{\partial}{\partial\theta_k}L(\theta;x_1,\dots,x_n)=0,\;\;\;\;k=1,\dots,K
+\] Later, and because the equations can have multiples solutions (local minimas,
+and global minimas) we need to compare the solutions among themselves and with
+the boundaries values of $\Theta$ to find the global maximum.
+
+\todo[inline]{example MLE under Normal}
+
+\subsubsection{Properties}
+\begin{itemize}
+    \item The MLE of $\theta$ is not necessarily unbiased.
+    \item The MLE of $\theta$ is not necessarily unique.
+    \item If an unbiased and efficient estimator of $\theta$ exists, then that
+    estimator is the unique MLE of $\theta$
+    \item The MLE is invariant with respect to one-to-one transformations of the
+    parameter, that is, if $\omega=h(\theta)$ where $h$ is one-to-one and
+    $\hat{\theta}$ is the MLE of $\theta$, then $\hat{\omega}=h(\hat{\theta})$
+    is the MLE of $\omega$
+\end{itemize}
+
+\subsubsection{Asymptotic efficency of MLEs}
+Let $f(x;\theta)$ be a p.d.f. (or p.m.f.) of a r.v. X, where $\theta\in\Theta$.
+Let $\Theta$ be a open interval from $\mathbb{R}$. Under certain regularity
+conditions\todo{check this conditions}, it holds that any sequence
+$\hat{\theta}_n$ of solutions of the likelihood equations that is consistent for
+$\theta$ verifies
+\[ \sqrt{n}(\hat{\theta}_n-\theta) \xrightarrow{d} \mathcal{N}(0,
+I(\theta)^{-1}) \] This definition can be used to calculate the MLE when a
+parameter $\theta$ is unknown.
+\todo[inline]{example}
