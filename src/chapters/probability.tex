@@ -817,6 +817,9 @@ $\text{Cov}[X_i,X_j]$
 \todo[inline]{complete with definition and properties}
 
 \subsection{Multivariate Normal Distribution}
+Is a generalization of the one-dimensional (univariate) normal distribution to
+higher dimensions. For $k=1$ is the normal distribution, for $k=2$ is the
+bivariate normal, for $k>2$ is the multivariate. 
 \[ \textbf{X} \sim \mathcal{N}_d(\mu,\Sigma)\]
 \todo[inline]{complete}
 \missingfigure{descriptive figure with diferent parameters}
@@ -832,7 +835,16 @@ $\text{Cov}[X_i,X_j]$
 \missingfigure{descriptive figure with diferent parameters}
 
 \subsection{Multinomial Distribution}
-\[ \textbf{X} \sim M(n,\textbf{p}) \]
+The multinomial distribution is the generalation of the binomial distribution.
+It allows to model the Bernoulli process with more than a binary result.  For
+example, it models the probability of counts of each side for rolling a k-sided
+die $n$ times.
+\[ \textbf{X} \sim M(n,p_1,\dots,p_k)\;\;\; \text{with }\sum_{i=1}^k p_i = 1 \]
+with
+\[ P(X=x) = \frac{n!}{x_1!\dots X_k!}p_1^{x_1}\dots p_k^{x_k} \]
+and have expectation and variance
+\[ \mathbb{E}[X_i]=np_i \;\;\;\; V[X_i] = np_i(1-p_i) \]
+
 \todo[inline]{complete}
 \missingfigure{descriptive figure with diferent parameters}
 
