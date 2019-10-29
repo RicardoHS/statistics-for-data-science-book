@@ -1,29 +1,36 @@
-This chapter will focus in the procedures to analyze a phenomena of which some information is unknown. Until now,
-we had analyzed problems and experiments in which the whole structure of the problem is known before. But, what
-happen when we couldn't know the probabilities related with all events? There is any approach to overcome this?
-Someone could just think, "Well, lets perform the experiment $n$ times and let's see what happen."\\
+This chapter will focus in the procedures to analyze a phenomena of which some
+information is unknown. Until now, we had analyzed problems and experiments in
+which the whole structure of the problem is known before. But, what happen when
+we couldn't know the probabilities related with all events? There is any
+approach to overcome this? Someone could just think, "Well, lets perform the
+experiment $n$ times and let's see what happen."\\
 
-This approach is the one we are going to follow in this chapter, and in it, it's analyzed the problems and benefits
-of performing such approach. The only prior we have to take in to account is that 
-\textbf{all random phenomena follows an underlying probability function}. With this in mind. Let's start defining in 
-a formal way "perform the experiment $n$ times"
+This approach is the one we are going to follow in this chapter, and in it, it's
+analyzed the problems and benefits of performing such approach. The only prior
+we have to take in to account is that \textbf{all random phenomena follows an
+underlying probability function}. With this in mind. Let's start defining in a
+formal way "perform the experiment $n$ times"
 
 \subsection{Parametric Family of Distributions}
 Let $F$ be a p.d.f. with parameter $\theta$\\
 
-Usually, for some random experiments, the trials could give us some information about the shape of the underlying
-probability function $F$ of the experiment. In practice, $F$ is not exactly know, but we know that his parameter 
-$\theta$ model his shape. So, we can know that $F$ belongs to a set or \textit{parametric family of distributions}
-$\{F(\;\cdot\;;\theta)\; |\; \theta \in \Theta\}$.\\
+Usually, for some random experiments, the trials could give us some information
+about the shape of the underlying probability function $F$ of the experiment. In
+practice, $F$ is not exactly know, but we know that his parameter $\theta$ model
+his shape. So, we can know that $F$ belongs to a set or \textit{parametric
+family of distributions} $\{F(\;\cdot\;;\theta)\; |\; \theta \in \Theta\}$.\\
 
-Because our objective is to know more about the real $F$ we need to perform some procedures in order to \textit{infer}
-the real value of $\theta$. If we achieve to infer the real value, or at least, an approximately one, then we could find,
-a good approximation of $F$ inside his family of distributions. In order to extract this information about $F$ we need
-to perform independent realizations of the experiment related with $F$. With this extracted knowledge we could perform
-inference over $F$ or his parameter $\theta$.\\
+Because our objective is to know more about the real $F$ we need to perform some
+procedures in order to \textit{infer} the real value of $\theta$. If we achieve
+to infer the real value, or at least, an approximately one, then we could find,
+a good approximation of $F$ inside his family of distributions. In order to
+extract this information about $F$ we need to perform independent realizations
+of the experiment related with $F$. With this extracted knowledge we could
+perform inference over $F$ or his parameter $\theta$.\\
 
-The fact that we perform independent repetitions of the experiment means that, for each repetition of the experiment, 
-we have an associated r.v. with the same distribution $F$. This is called, \textit{simple random sample}.
+The fact that we perform independent repetitions of the experiment means that,
+for each repetition of the experiment, we have an associated r.v. with the same
+distribution $F$. This is called, \textit{simple random sample}.
 
 \subsection{Types of estimation (Inference)}
 \todo[inline]{Review the taxonomy and refactor to be the same in the whole book}
@@ -34,15 +41,18 @@ we have an associated r.v. with the same distribution $F$. This is called, \text
 \end{itemize}
 
 \subsection{Random Sample}
-A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a collection of r.v. $(X_1, X_2,\dots,X_n)$ that are 
-\textbf{independent and identically distributed (i.i.d.)} and all of them follows the same distribution $F$\\
+A \textit{simple random sample} of a r.v. $X$ with distribution $F$ is a
+collection of r.v. $(X_1, X_2,\dots,X_n)$ that are \textbf{independent and
+identically distributed (i.i.d.)} and all of them follows the same distribution
+$F$\\
 
 Because the random variables are independent, the c.d.f. of the sample is,
 \[ F_X(x_1,x_2,\dots,x_n) = F(X_1)F(x_2)\dots F(x_n) \]
 
 \subsection{Statistic}
-A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n) \rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ 
-is the dimension of the statistic. For example:
+A statistic $T$ is any measurable function $T: (\mathbb{R}^n,\mathcal{B}^n)
+\rightarrow (\mathbb{R}^k,\mathcal{B}^k)$, where $k$ is the dimension of the
+statistic. For example:
 \begin{itemize}
     \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n}\sum_{i=1}^{n}X_i \triangleq \bar{X}_n$, this is called \textbf{Sample Mean}
     \item $T_1(X_1,X_2,\dots,X_n) = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 \triangleq S'^2_n$, this is called \textbf{Sample Variance}
@@ -51,21 +61,27 @@ is the dimension of the statistic. For example:
     \item $T_1(X_1,X_2,\dots,X_n) = \sum_{i=1}^{n} \log{X_i}$
     \item $T_1(X_1,X_2,\dots,X_n) = (X_{(1)}, X_{(n)})$
 \end{itemize} 
-All these statistics have dimension $k=1$ except the last with $k=2$. The distribution induced by the statistic $T$ is called the 
-\textit{sampling distribution} of $T$, since it depends on the distribution of the sample.
+All these statistics have dimension $k=1$ except the last with $k=2$. The
+distribution induced by the statistic $T$ is called the \textit{sampling
+distribution} of $T$, since it depends on the distribution of the sample.
 
 \subsection{Estimators or Point Estimators}
-An estimator is an statistic that tries to estimate the value of a parameter $\theta$ that belongs to the distribution of the variable
-$X$. Thus,\\
+An estimator is an statistic that tries to estimate the value of a parameter
+$\theta$ that belongs to the distribution of the variable $X$. Thus,\\
 
-Let $X \sim F(\cdot\;;\;\theta)$ where $\theta$ is a parameter vector with possibles values in the \textit{parameter space} $\Theta$.
-An estimator $\hat{\theta}_n$ of $\theta$ is a statistic $\hat{\theta}_n(X_1,\dots,X_n)$ with values also in $\Theta$ 
+Let $X \sim F(\cdot\;;\;\theta)$ where $\theta$ is a parameter vector with
+possibles values in the \textit{parameter space} $\Theta$. An estimator
+$\hat{\theta}_n$ of $\theta$ is a statistic $\hat{\theta}_n(X_1,\dots,X_n)$ with
+values also in $\Theta$ 
 
-To clarify with a example, in the real world many r.v. follows a normal distribution with mean $\mu \in \mathbb{R}$ and variance 
-$\sigma^2 \in \mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the distribution of a r.v. belong to a 
-normal family of distributions $\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$. Knowing this, it is said 
-that the \textbf{sample mean} $\bar{X}$ and the \textbf{sample variance} $S^2$ are good estimators of the distribution mean $\mu$ 
-and distribution variance $\sigma^2$.
+To clarify with a example, in the real world many r.v. follows a normal
+distribution with mean $\mu \in \mathbb{R}$ and variance $\sigma^2 \in
+\mathbb{R}^+$ that are unknown. Because of this, it's usually assumed that the
+distribution of a r.v. belong to a normal family of distributions
+$\{\mathcal{N}(\mu,\sigma^2):\mu\in\mathbb{R},\sigma^2\in \mathbb{R^+} \}$.
+Knowing this, it is said that the \textbf{sample mean} $\bar{X}$ and the
+\textbf{sample variance} $S^2$ are good estimators of the distribution mean
+$\mu$ and distribution variance $\sigma^2$.
 
 \begin{table}[H]
     \centering
@@ -73,51 +89,57 @@ and distribution variance $\sigma^2$.
     Population Parameter    & Sample Estimator                          \\
     $p = P(X=1)$            & $\hat{p}_n = \frac{1}{n}\sum_{i=1}^n X_i$ \\
     $\mu = \mathbb{E}[X]$   & $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ \\
-    $\sigma^2 = V[X]$       & $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $
+    $\sigma^2 = V[X]$       & $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n}
+    (X_i-\bar{X})^2 $
     \end{tabular}
 \end{table}
 
-\subsection{Biased and Unbiased Estimator}
-\todo[inline]{Write all this, probably it will go in other section}
-
 \section{Exact inference under Normal Distributions}
 \textbf{Sampling distributions in Normal Populations}\\
-The sample mean $\bar{X}$ and sample variance $S^2$ estimators play an important role in statistical inference, since both are “good” estimators
-of $\mu$ and $\sigma^2$, respectively. As a consequence, it is important to obtain their sampling distributions in order to know their random behaviors. 
-We will do so under the assumption of normal populations.
+The sample mean $\bar{X}$ and sample variance $S^2$ estimators play an important
+role in statistical inference, since both are “good” estimators of $\mu$ and
+$\sigma^2$, respectively. As a consequence, it is important to obtain their
+sampling distributions in order to know their random behaviors. We will do so
+under the assumption of normal populations.
 
 \subsection{Expected value and Variance of the sample mean}
-Let $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ be the sample mean. Then, it holds,
+Let $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$ be the sample mean. Then, it
+holds,
 \[ \mathbb{E}[\bar{X}_n] = \mu,\;\;\; V[\bar{X}_n] = \frac{\sigma^2}{n} \]
 
 \subsection{Expected value of the sample variance}
-Let $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $ be the sample variance. Then, it holds,
+Let $S'^2_n = \frac{1}{n-1}\sum_{i=1}^{n} (X_i-\bar{X})^2 $ be the sample
+variance. Then, it holds,
 \[ \mathbb{E}[S'^2_n] = \sigma^2 \]
 
 \subsection{Logarithmic Distribution Transformations}
 \todo[inline]{Review all this}
-If we take a constant $k$ and perform a logarithmic transformation of the sample distribution $\bar{X}_n$ with this constant. For a fixed $k$ it holds,
+If we take a constant $k$ and perform a logarithmic transformation of the sample
+distribution $\bar{X}_n$ with this constant. For a fixed $k$ it holds,
 \[ \log(\bar{X}_n + k) \sim \mathcal{N}(\mu, \sigma^2) \]
 
 \subsection{Sample Mean of Normal Distribution}
-Let $(X_1,\dots,X_n)$ a s.r.s. of size $n$ of a r.v. $\mathcal{N}(\mu,\sigma^2)$. Then, the \textbf{sample mean} $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$
-satisfies,
+Let $(X_1,\dots,X_n)$ a s.r.s. of size $n$ of a r.v.
+$\mathcal{N}(\mu,\sigma^2)$. Then, the \textbf{sample mean} $\bar{X}_n =
+\frac{1}{n}\sum_{i=1}^n X_i$ satisfies,
 \[ \bar{X} \sim \mathcal{N}(\mu,\frac{\sigma^2}{n}) \]
 
-\subsection{Z statistic or Standarization}
-The $Z$ statistic is obtained when the sample mean is standarizated,
+\subsection{Z statistic or Standardization}
+The $Z$ statistic is obtained when the sample mean is standardized,
 \[ Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
 
 \subsection{Chi-Square Distribution}
-A Chi-square distribution $\mathcal{X}_n^2$ with $n$ degrees of freedom, is the distribution that gives the sum of $n$ independent r.v. $Z_1,\dots,Z_n$ all of
+A Chi-square distribution $\mathcal{X}_n^2$ with $n$ degrees of freedom, is the
+distribution that gives the sum of $n$ independent r.v. $Z_1,\dots,Z_n$ all of
 them with $\mathcal{N}(0,1)$ distributions. Thus,
-\[ \sum_{i=1}^n Z_i^2 \sim \mathcal{X}_n^2 \]
-and it holds that $\mathcal{X}^2_n = $Gamma$(n/2,2)$
+\[ \sum_{i=1}^n Z_i^2 \sim \mathcal{X}_n^2 \] and it holds that $\mathcal{X}^2_n
+= $Gamma$(n/2,2)$
 
 \subsection{Fisher's Theorem}
-Let $(X_1,\dots,X_n)$ be a s.r.s of r.v. that follows $\mathcal{N}(\mu,\sigma^2)$. Then,
-\[ \frac{(n-1)S'^2_n}{\sigma^2} = \sum_{i=1}^{n} (\frac{X_i - \hat{X}_n}{\sigma})^2 \sim \mathcal{X}_{n-1}^2 \]
-and
+Let $(X_1,\dots,X_n)$ be a s.r.s of r.v. that follows
+$\mathcal{N}(\mu,\sigma^2)$. Then,
+\[ \frac{(n-1)S'^2_n}{\sigma^2} = \sum_{i=1}^{n} (\frac{X_i -
+\hat{X}_n}{\sigma})^2 \sim \mathcal{X}_{n-1}^2 \] and
 \begin{center}
     $\hat{X}_n$ and $\mathcal{X}_n^2$ are independent
 \end{center}
@@ -126,49 +148,400 @@ and
 \todo[inline]{diapo 2.21}
 
 \subsection{Student's Distribution}
-Let $X \sim \mathcal{N}(0,1)$ and $Y \sim \mathcal{X}_v^2$ be independent. The distribution of the r.v. 
-\[ T = \frac{X}{\sqrt{Y/v}} \]
-is a Student's $t_v$ with $v$ degrees of freedom
+Let $X \sim \mathcal{N}(0,1)$ and $Y \sim \mathcal{X}_v^2$ be independent. The
+distribution of the r.v. 
+\[ T = \frac{X}{\sqrt{Y/v}} \] is a Student's $t_v$ with $v$ degrees of freedom
 
 \subsection{T statistic}
-Let $(X_1,\dots,X_n)$ a s.r.s. of a r.v. that follows a $\mathcal{N}(\mu,\sigma^2)$. Then, a $T$ statistic is,
+Let $(X_1,\dots,X_n)$ a s.r.s. of a r.v. that follows a
+$\mathcal{N}(\mu,\sigma^2)$. Then, a $T$ statistic is,
 \[ T = \frac{\bar{X_n}-\mu}{S'^2_n / \sqrt{n}} \sim t_{n-1}\]
 
 \subsection{Snedecor's Distribution}
-Let $X_1 \sim \mathcal{X}_{v_1}^2$ and $X_2 \sim \mathcal{X}_{v_2}^2$ be independent. The distribution of the r.v.
-\[ F = \frac{X_1/v_1}{X_2/v_2} \]
-is a Snedecor's $F$ distribution with $v_1$ degrees of freedom in the numerator, and $v_2$ degrees of freedom in the denominator. It's denoted $\mathcal{F}_{v_1,v_2}$
+Let $X_1 \sim \mathcal{X}_{v_1}^2$ and $X_2 \sim \mathcal{X}_{v_2}^2$ be
+independent. The distribution of the r.v.
+\[ F = \frac{X_1/v_1}{X_2/v_2} \] is a Snedecor's $F$ distribution with $v_1$
+degrees of freedom in the numerator, and $v_2$ degrees of freedom in the
+denominator. It's denoted $\mathcal{F}_{v_1,v_2}$
 
 \subsubsection{Note:}
 \[ F_{1,v} = t^2_v \]
 
 \subsection{F statistic}
-Let $(X_1,\dots,X_{n_1})$ be a s.r.s. of a $\mathcal{N}(\mu_1,\sigma^2_1)$ with sample variance $S'^2_n$. Let $(Y_1,\dots,Y_{n_2})$ be a different s.r.s. of a 
-$\mathcal{N}(\mu_2,\sigma^2_2)$ with sample variance $S'^2_2$. Let the first and the second distributions be independent. Then,
-\[ F = \frac{S'^2_1/\sigma^2_1}{S'^2_2/\sigma^2_2} \sim \mathcal{F}_{n_1-1,n_2-1}\]
+Let $(X_1,\dots,X_{n_1})$ be a s.r.s. of a $\mathcal{N}(\mu_1,\sigma^2_1)$ with
+sample variance $S'^2_n$. Let $(Y_1,\dots,Y_{n_2})$ be a different s.r.s. of a
+$\mathcal{N}(\mu_2,\sigma^2_2)$ with sample variance $S'^2_2$. Let the first and
+the second distributions be independent. Then,
+\[ F = \frac{S'^2_1/\sigma^2_1}{S'^2_2/\sigma^2_2} \sim
+\mathcal{F}_{n_1-1,n_2-1}\]
 
 \section{Large Sample Inference}
 What happens when we can't ensure that the underlying distribution is a normal?
 
 \subsection{Convergence in distribution}
 The sequence of r.v. converges in distribution to the r.v. $X$ if,
-\[ \lim_{x\rightarrow\infty}F_{X_n}(x) = F_X(x) \]
-for all the points $x$ where $F_X(x)$ is continuous. This is denoted as,
+\[ \lim_{x\rightarrow\infty}F_{X_n}(x) = F_X(x) \] for all the points $x$ where
+$F_X(x)$ is continuous. This is denoted as,
 \[ X_n \xrightarrow{d} X \]  
 
 \subsection{Central Limit Theorem}
-Let $X_1,\dots,X_n$ i.i.d. r.v. with expectation $\mathbb{E}[X_i] = \mu$ and variance $V[X_i]=\sigma^2 < \infty$. Then, the c.d.f. of the r.v. converges to the c.d.f 
-of a $\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
-\[ Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1)\]
+\todo[inline]{explain much better this theorem}
+Let $X_1,\dots,X_n$ i.i.d. r.v. with expectation $\mathbb{E}[X_i] = \mu$ and
+variance $V[X_i]=\sigma^2 < \infty$. Then, the c.d.f. of the r.v. converges to
+the c.d.f of a $\mathcal{N}(0,1)$ as long as $n \rightarrow \infty$. This is,
+\[ Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d}
+\mathcal{N}(0,1)\]
+
+\begin{tcolorbox}
+    \textbf{Summary}\\
+    \[
+    (X_1,\dots,X_n)
+    \begin{cases}
+        \sim \mathcal{N}(\mu, \sigma^2) \Rightarrow \bar{X}_n \sim \mathcal{N}(\mu, \sigma^2/n)\\
+        \nsim \mathcal{N}(\mu, \sigma^2)
+            \begin{cases}
+                n < 30 \Rightarrow \text{?}\\
+                n \geq 30 \Rightarrow \bar{X}_n \cong \mathcal{N}(\mu, \sigma^2/n)
+            \end{cases}
+    \end{cases}
+    \]
+\end{tcolorbox}
+In general, when inference, if the original distribution follows a normal and
+the sample size is small, we need to use the Student's t distribution.
+Otherwise, use the normal. \todo{explain better}
 
 
+\section{Properties of estimators}
+\subsection{Biased and Unbiased}
+Given an estimator $\hat{\theta}$ the quantity 
+\[ \textbf{B}[\hat{\theta}] = \mathbb{E}[\hat\theta] - \theta \] is the bias of
+the estimator. It is said that a estimator with zero bias is unbiased.
+$\mathbb{E}[\hat\theta] = \theta$
+\missingfigure{two explanatory dartboard}
 
+\subsection{Estimation Error}
+Once observed the value of $\hat{\theta}$ of a sample the estimation error is
+the quantity $\hat{\theta}_n - \theta$. Note that the estimation error is
+usually different from zero. The bias is the mean estimation error.
+\[ \textbf{B}[\hat{\theta}] = \mathbb{E}[\hat{\theta}_n] - \theta =
+\mathbb{E}[\hat{\theta}_n - \theta] \]
 
+\subsubsection{Error measures}
+There are lots of error measurements and each one is used for different
+implications. The most commons are:
+\begin{itemize}
+    \item Mean Absolute Error: $\text{MSE} = \mathbb{E}[|\hat{\theta}_n -
+    \theta|]$
+    \begin{tcolorbox}
+        Note that \[ \text{MSE} = \textbf{B}^2(\hat{\theta}_n) +
+        V(\hat{\theta}_n) \]
+    \end{tcolorbox}
+    \item Mean Square Error: $\text{MAE} = \mathbb{E}[(\hat{\theta}_n -
+    \theta)^2]$
+\end{itemize}
+\todo[inline]{Add more error measurements and his implications}
 
+\subsubsection{Estimator selection}
+When we have to choose between two estimators $\hat{\theta}_{n,1}$ or
+$\hat{\theta}_{n,2}$
+\begin{itemize}
+    \item If both are unbiased, choose the one with smallest variance.
+    \item If at leas is biased, then choose the one with smallest error (e.g.
+    MSE).
+\end{itemize}
 
+\subsection{Relative Error}
+One problem that appears when measuring errors is that in general one error cant
+be directly compared with another one. One way to overcome this is to use a
+measurement that holds the same scale.
+\subsubsection{Coefficient of Variation}
+Given a estimator $\hat{\theta}$ with standard deviation $\sigma(\hat{\theta})$.
+The coefficient of variation or relative standard deviation (RSD) is defined as
+\[ \text{C.V.}(\hat{\theta}) =
+\frac{\sigma(\hat{\theta})}{\hat{\theta}}\text{x}100\;\;\;\;\;\;
+\text{if}\hat{\theta} \text{ is unbiased}\]
+\[
+\text{RRMSE}(\hat{\theta}) = \text{C.V.}(\hat{\theta}) = 
+\frac{\sqrt{\text{MSE}(\hat{\theta})}}{\hat{\theta}}\text{x}100\;\;\;\;\;\; \text{if
+}\hat{\theta} \text{ is biased}
+ \] 
 
+\subsection{Invariant}
+\todo[inline]{add more invariant properties}
+\subsubsection{Translation Invariant}
+It is said that a estimator is translation invariant when it satisfies
+\[ \hat{\theta}(X_1 + c,\dots,X_n + c) = \hat{\theta}(X_1,\dots,X_n) +
+c,\;\;\;\; \forall c \in \mathbb{R}\]
+\todo{example}
 
+\subsubsection{Scale Invariant}
+It is said that a estimator is scale invariant when it satisfies
+\[ \hat{\theta}(cX_1,\dots,cX_n) = c\hat{\theta}(X_1,\dots,X_n) ,\;\;\;\;
+\forall c > 0 \]
+\todo{example}
 
+\subsection{Consistency}
+The idea of consistency is related with the size of the sample. This property
+apply when the probability that the estimator $\hat{\theta}$ decay from the real
+$\theta$ when $n\rightarrow\infty$. More formally \todo{add explanatory plot}
+\[ P(|\bar{X}_n - \mu|) > 1 \;\;\text{ when }\;\; n\rightarrow\infty\]
 
+\subsubsection{Weak Consistency}
+Let $X$ be a r.v. with induced probability $P( \cdot ) = P(\cdot\;;\theta)$. Let
+$(X_1,\dots,X_n)$ be a s.r.s of $X$, and let $\hat{\theta}_n =
+\hat{\theta}_n(X_1,\dots,X_n)$ be an estimator of $\theta$. The sequence
+$\{\hat{\theta}_n,\; n \in \mathbb{N}\}$ is consistent (or weak consistent, or
+consistent in probability) for $\theta$, denoted
+$\hat{\theta}\xrightarrow{P}\theta$, if and only if,
+\[ \lim_{n\rightarrow\infty} P(|\hat{\theta}_n - \theta| > \epsilon)=0,\;\;\;
+\forall \epsilon>0\]
 
+\subsubsection{Consistency in squared mean}
+The following definition is stronger than the previous one,\\
+A sequence of estimators $\{\hat{\theta}_n, n \in \mathbb{N}\}$ is consistent in
+squared mean for $\theta$, denoted $\hat{\theta}\xrightarrow{sq.m.}\theta$, if
+it verifies
+\[ \lim_{n\rightarrow\infty} \text{MSE}(\hat{\theta}_n) = 0 \] or equivalently,
+\[ \lim_{n\rightarrow\infty} \textbf{B}(\hat{\theta}_n) = 0 \;\;\;
+\text{and}\;\;\; \lim_{n\rightarrow\infty} V(\hat{\theta}_n) = 0 \] This theorem
+also states that,
+\[ \hat{\theta}_n \xrightarrow{sq.m.}\theta \Rightarrow \hat{\theta}_n
+\xrightarrow{P}\theta \]
 
+\section{Law of Large Numbers}
+The law of large numbers (LLN) is along with the central limit theorem the two
+key laws in probability. It states that when the estimator is consistent and the
+sample size is enough big, the sample mean equals the population mean. More
+formally,
+\subsubsection{Definition of LLN}
+Let $(X_1,\dots,X_n)$ be a s.r.s. of a r.. $X$ with mean $\mu$ and variance
+$\sigma^2<\infty$. Then,
+\[ \bar{X}_n \xrightarrow{P} \mu \]
+
+\section{Algebra of Consistency}
+It is stated that any continuous transformation of a consistent estimator is
+consistent for the same transformation of the parameter. We can define formally
+in two ways,\\
+
+\subsubsection{Single estimator definition}
+Let $\hat{\theta}\xrightarrow{P}\theta$ and let $g(x)$ be a continuous at
+$x=\theta$. Then $g(\hat{\theta}_n) \xrightarrow{P}g(\theta)$
+\subsubsection{Multiple estimator definition}
+Let $\hat{\theta}\xrightarrow{P}\theta$ and
+$\hat{\theta}'\xrightarrow{P}\theta'$. Let $g(x,y)$ be a continuous at
+$(x,y)=(\theta,\theta')$. Then $g(\hat{\theta}_n,\hat{\theta}_n')
+\xrightarrow{P}g(\theta,\theta')$
+
+\subsubsection{Corollary}
+From this two definitions we can summarize multiples algebras between
+estimators.
+\begin{itemize}
+    \item $\hat{\theta}_n + \hat{\theta}_n' \xrightarrow{P} \theta + \theta'$
+    \item $\hat{\theta}_n\hat{\theta}_n' \xrightarrow{P} \theta\theta'$
+    \item $\hat{\theta} / \hat{\theta}_n' \xrightarrow{P} \theta/ \theta' \;\;\;
+    \text{if } \theta' \neq 0$
+    \item $\sqrt{\hat{\theta}_n} \xrightarrow{P} \sqrt{\theta} \;\;\;\;
+    \text{if}\; P(\hat{\theta}_n \geq 0) = 1$
+    \item $a_n\hat{\theta}_n \xrightarrow{P} a\theta \;\;\; \text{with} a_n$
+    being a sequence of constants. 
+\end{itemize}
+
+\subsection{Slutsky's Theorem}
+Let $U_n$ and $W_n$ be random sequences satisfying
+\[ U_n\xrightarrow{d}\mathcal{N}(0,1),\;\;\;\;\; W_n\xrightarrow{P}1\] Then, it
+holds,
+\[\frac{U_n}{W_n} \xrightarrow{d} \mathcal{N}(0,1)\]
+\todo[inline]{Add asymptotic normality of T stat example}
+
+\section{Fisher's Information}
+Let $X$ be a continuous r.v. with distribution that depends of $\theta \in
+\Theta \subset \mathbb{R}$. The Fisher's information of $X$ over $\theta$ is
+defined as
+\[ I(\theta) = \mathbb{E}\left[\left(\frac{\partial\log
+f(X;\theta)}{\partial\theta}\right)^2\right] \] for continuous distributions.
+For discrete distributions the definition is the same but replacing the p.d.f
+for the p.m.f (replacing $f(X;\theta) \text{ by } p(X;\theta)$)
+\begin{tcolorbox}
+    Note that
+    \[ \frac{\partial\log f(X;\theta)}{\partial\theta} = \frac{\frac{\partial
+    f(X;\theta)}{\partial\theta}}{f(X;\theta)} \]
+\end{tcolorbox}
+
+This quantity is the relative variation rate of $f$ when varying $\theta$, for a
+realized value $x$ of $X$. It represents the information of $x$ to discriminate
+$\theta$ from a near value $\theta+h$. Fisher’s information is the mean
+information of the r.v. $X$ about $\theta$.
+\todo[inline]{add better and conceptual explanation. Maybe an image too}
+
+\subsection{Fisher's Information of a sample}
+The Fisher's information of a s.r.s $(X_q,\dots,X_n)$ of a continuous r.v. $X$
+over $\theta$ is defined as
+\[ \mathcal{I}_n(\theta) = \mathbb{E}\left[\left(\frac{\partial\log
+f(X_1,\dots,X_n;\theta)}{\partial\theta}\right)^2\right] \] For $X$ discrete
+just replace $f(\cdot;\theta)$ by the joint p.m.f. $p(\cdot;\theta)$
+
+\subsubsection{Fisher's equality}
+\todo[inline]{search and add information about this equality}
+Under certain regularity assumptions,
+\[ \mathcal{I}_n(\theta) = nI(\theta) \]
+
+\subsubsection{Frechet-Cr\'amer-Rao lower bound}
+\todo{Check and write this assumptions}Under certain regularity assumptions, any
+unbiased estimator $\hat{\theta}_n=\hat{\theta}_n(X_1,\dots,X_n)$ of $\theta$
+satisfies
+\[ V(\hat{\theta}_n) \geq 1 / \mathcal{I}_n(\theta)\]
+
+\subsection{Efficient estimator}
+An unbiased estimator $\hat{\theta}_n$ of $\theta$ that satisfies
+$V(\hat{\theta}_n)=1 / \mathcal{I}_n(\theta)$ is called efficient. If an
+estimator is efficient it means that it is the best possible estimator.
+\todo{add example}
+
+\section{Robust Estimators}
+\todo[inline]{search more info about robust estimators and complete this section}
+In real problems it is common that the data contains some contamination in form
+of measurements errors or other problems. In statistics it is said that an
+estimator $\hat{\theta}$ is robust if it preserves good properties (small bias
+and variance) even if the sample is contaminated.
+
+The theory of statistical robustness is deep. For this, we are going to use this
+widely-used contamination model for $f(\;\cdot;\theta)$.
+\[ (1-\epsilon)f(x;\theta) + \epsilon g(x),\;\;\;\; x \in \mathbb{R},\\
+\text{ with } 0<\epsilon<0.5 \\ \text{ and arbitrary p.d.f }\;\; g\]
+
+\subsection{Outliers}
+\todo[inline]{rewrite this whole part, because tis copy-paste from another book}
+The concept of outlier is intimately related with robustness. Outliers are
+“abnormal” observations in the sample that seem very unlikely for the assumed
+distribution model or are remarkably different from the rest of sample
+observations. Outliers can be originated by measurement errors, exceptional
+circumstances, changes in the data generating process, etc.
+
+There are two main approaches for preventing outliers or contamination to
+undermine the estimation of $\theta$:
+\begin{enumerate}
+    \item Detect the outliers through a diagnosis of the model fit and
+    re-estimate the model once the outliers have been removed.
+    \item Employ a robust estimator
+\end{enumerate}
+
+The first approach is the traditional one and is still popular due to its
+simplicity. Besides, it allows us to employ non-robust efficient estimators that
+tend to be simpler to compute, provided the data has been cleared adequately.
+However, this procedure may quickly run into problems, since, for example,
+detecting outliers in higher dimensions is usually complicated and this
+detection may require manual inspection of the data.
+
+In addition, robust estimators may be needed even when performing the first
+approach, as the following example illustrates. A simple rule to detect outliers
+in a normal population is to flag as outliers the observations that lie further
+away than $3\sigma$ from the mean $\mu$, since those observations are highly
+extreme. Since their probability is $0.0027$, we expect to flag as an outlier
+$1$ out of $371$ observations if the data comes from a perfectly valid normal
+population. However, applying this procedure entails estimating first $\mu$ and
+$\sigma$ from the data. But the conventional estimators, sample mean and
+variance, are also very sensitive to outliers, and therefore their resulting
+values may hide the existence of outliers. Therefore, it is better to rely on a
+robust estimator, which brings us back to the second approach. As a consequence,
+it is sometimes preferred to employ robust estimators from the beginning.
+
+The next definition introduces a simple measure of the robustness of an
+estimator.
+
+\subsection{Finite-sample breakdown point}
+The breakdown point of an estimator can be interpreted as the maximum fraction
+of the sample that can be changed without modifying the value of $\hat{\theta}$
+to an arbitrary large value.
+
+\todo[inline]{add better explanation, examples of robust estimators, trimmed mean, etc}
+
+\section{Estimation methods}
+\todo[inline]{add introductory text}
+\subsection{Method of moments}
+\subsubsection{Population moments}
+Let's consider a population $X$ with a unknown distribution that depends on $K$
+unknown parameters $\theta_1,\dots,\theta_K$. The populations moments are
+functions of the unknown parameters, if they exists. Formally,
+\[ \alpha_r = \alpha_r(\theta_1,\dots,\theta_K) = \mathbb{E}[X^r],\;\;\;
+r=1,2,3,\dots \]
+
+\subsubsection{Sample moment}
+Given a s.r.s. of $X$, it's denoted by $a_r$ to the sample moment of order $r$
+that estimate $\alpha_r$
+\[ a_r = \bar{X}^r = \frac{1}{n}\sum_{i=1}^n X^r_i\;\;\;\;\;r=1,2,3,\dots\] It's
+important to note that the sample moments do not depend of
+$\alpha_1,\dots,\alpha_K$ but the population moment does. 
+
+\subsubsection{Method of Moments}
+Let $X$ be a r.v. that follow a unknown distribution of unknown parameters
+$\theta_1,\dots,\theta_K$. The method of moments estimates this parameters by
+resolving a system of equations of shape
+\[ \alpha_r(\theta_1,\dots,\theta_K) = a_r\;\;\;\; r=1,\dots,R \] where $R \geq
+K$ is the lowest integer such that the system admits a unique solution. This
+estimator of $\theta$ is denoted by $\hat{\theta}_{MM}$
+\todo[inline]{add example}
+
+\subsubsection{Consistency of moments estimators}
+In the moment estimator method, if $\mathbb{E}[(X^{r_k}-\alpha_{r_k})^2]<\infty$
+and $\theta_k=g_k(\alpha_{r_1},\dots,\alpha_{r_K})$, with $g_k$ continuous and
+$k=1,\dots,K$ then
+\[ \hat{\theta}_k = g_k(a_{r_1},\dots,a_{r_K})\xrightarrow{P}\theta_k, \;\;\;\;
+i=1,\dots,K \]
+
+\subsection{Maximum Likelihood Method}
+\todo[inline]{introductory example with unfair toss coin 0.8,0.2}
+This method relies in the believe that whatever happens in the reality is what
+is more probably to happen.
+
+The Maximum Likelihood estimator (MLE) denoted by $\hat{\theta_{\text{MLE}}}$ of
+$\theta$ given the realized sample $(X_1=x_1,\dots,X_n=x_n)$ is the value
+$\hat{\theta}$ that maximizes the likelihood
+\[ L(\hat{\theta};x_1,\dots,x_n) = \max_{\theta\in\Theta}L(\theta;x_1,\dots,x_n)
+\]
+\[ \hat{\theta}_{\text{MLE}} = \arg \max_{\theta\in\Theta}
+L(\theta;x_1,\dots,x_n) \]
+\begin{tcolorbox}
+    Note that the maximum $\hat{\theta}$ of the likelihood is also the maximum
+    of the loglikelihood
+    \[ \ell(\hat{\theta};x_1,\dots,x_n) = \log L(\theta;x_1,\dots,x_n)\] This is
+    because the logarithm is monotonously increasing.
+\end{tcolorbox}
+It's important to remark that when calculating the MLE sometimes is more easy to
+just compute the logMLE.
+
+\subsubsection{Computation of MLE}
+In order to find that maximum likelihood, there are some remarks to take into
+account. If $\Theta$ is finite, the maximum can be found evaluating all possible
+values of $L(\theta;x_1,\dots,x_n)$. If $\Theta$ is infinite and
+$L(\theta;x_1,\dots,x_n)$ is differentiable respect $\theta$, then the solutions
+of the likelihood equations can be calculated
+\[
+\frac{\partial}{\partial\theta_k}L(\theta;x_1,\dots,x_n)=0,\;\;\;\;k=1,\dots,K
+\] Later, and because the equations can have multiples solutions (local minimas,
+and global minimas) we need to compare the solutions among themselves and with
+the boundaries values of $\Theta$ to find the global maximum.
+
+\todo[inline]{example MLE under Normal}
+
+\subsubsection{Properties}
+\begin{itemize}
+    \item The MLE of $\theta$ is not necessarily unbiased.
+    \item The MLE of $\theta$ is not necessarily unique.
+    \item If an unbiased and efficient estimator of $\theta$ exists, then that
+    estimator is the unique MLE of $\theta$
+    \item The MLE is invariant with respect to one-to-one transformations of the
+    parameter, that is, if $\omega=h(\theta)$ where $h$ is one-to-one and
+    $\hat{\theta}$ is the MLE of $\theta$, then $\hat{\omega}=h(\hat{\theta})$
+    is the MLE of $\omega$
+\end{itemize}
+
+\subsubsection{Asymptotic efficency of MLEs}
+Let $f(x;\theta)$ be a p.d.f. (or p.m.f.) of a r.v. X, where $\theta\in\Theta$.
+Let $\Theta$ be a open interval from $\mathbb{R}$. Under certain regularity
+conditions\todo{check this conditions}, it holds that any sequence
+$\hat{\theta}_n$ of solutions of the likelihood equations that is consistent for
+$\theta$ verifies
+\[ \sqrt{n}(\hat{\theta}_n-\theta) \xrightarrow{d} \mathcal{N}(0,
+I(\theta)^{-1}) \] This definition can be used to calculate the MLE when a
+parameter $\theta$ is unknown.
+\todo[inline]{example}
