@@ -5,7 +5,7 @@ Status](https://travis-ci.com/RicardoHS/statistics-for-data-science-book.svg?bra
 An open source book
 
 [Link to last PDF
-available](https://github.com/RicardoHS/statistics-for-data-science-book/releases/latest)
+available](https://github.com/RicardoHS/statistics-for-data-science-book/releases/latest/download/main.pdf)
 
 ## Book Versions
 In order to allow online references (in forums, blogs, etc) all pdf releases
