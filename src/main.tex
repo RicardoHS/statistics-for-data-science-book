@@ -1,77 +1,119 @@
-% following this guide 
-% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
-
-\documentclass[12pt]{book} 
-\usepackage{biblatex} 
-\usepackage{graphicx} % for images
-\usepackage{amsmath} %for big math definitions, enables \[  \]
-\usepackage{amssymb} %for common sets as real, complex, etc
-\usepackage{graphicx} %for insert images
-\usepackage{multicol} %for multicolumns
-\usepackage{cancel} %to cancel math terms
-\usepackage{float} % to use the H param in tables and fix his position
-\usepackage{hyperref} % to make listofcontent clickable
-\usepackage{tcolorbox} % to put te inside box
-
-%%%%%%%%%%%%%%%%%%%%%%% list of packages to remove before release
-\usepackage[figcolor=white]{todonotes}
-%\todo[inline]{A todonote placed in the text}
-%%%%%%%%%%%%%%%%%%%%%%%
-
-\addbibresource{bib/biblatex.bib}
-\graphicspath{ {./images/} }
-\restylefloat{table} % allow the tables to use the H param
+%%%%%%% Layout definitions
+\documentclass[fontsize=12pt,paper=letter,headings=big,chapterprefix=off,DIV=calc,headsepline=true,titlepage=on,BCOR=5mm,parskip=half*,appendixprefix=true]{scrbook} 			% an enhanced class for create books, part of the KOMA Script bundle
+\usepackage[utf8]{inputenc}			% for the correct typesetting of the document 
+\usepackage[T1]{fontenc}			% for ensure the correct typographical mapping of the text inserted in the generated PDF
+\usepackage[english]{babel}			% for ensure a correct justification and hyphenation of the text in the language used
+\usepackage[style=american]{csquotes} % for the correct typesetting of the quote marks.
+\usepackage[sfdefault,lining]{FiraSans} % for use a typeface other than Computer Modern typeface, 'sfdefault' activates Fira Sans as the default text font
+\usepackage{FiraMono}				% for monospaced text in URLS, code snippets, etc.
+\usepackage{amsmath} 				% for a lot of stuff that ease the mathematical typesetting
+\usepackage{amssymb} 				% for common sets as real, complex, etc.
+\usepackage{cancel} 				% to cancel math terms
+%%%%%%% Floats definitions
+\usepackage{multicol} 				% for multicolumns
+\usepackage{float} 					% to use the H parameter in tables and try to fix its position
+\restylefloat{table} 				% allow the tables to use the H parameter
+\usepackage{tcolorbox} 				% to put te inside box
+\usepackage{graphicx} 				% for insert images
+\graphicspath{{./images/}}			% path for search the images
+%%%%%%% References
+\usepackage{biblatex} 				% a 21st century citation and bibliographic reference insertion system
+\addbibresource{bib/biblatex.bib}	% the path to the reference database
+% If we don't setup anything else, the citation style and references at the end of the document will be the default ones used by the biblatex package.
+%%%%%%% Hyperlinks definitions
+\usepackage{hyperref} 				% to make listofcontent clickable and custom the PDF metadata 
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+pdftoolbar=true,        			% show Acrobat’s toolbar?
+    pdfmenubar=true,        		% show Acrobat’s menu?
+    pdffitwindow=false,     		% window fit to page when opened
+    pdfstartview={FitH},    		% fits the width of the page to the window
+    pdftitle={Statistics for Data Science},	% title
+    pdfauthor={Ricardo Hortelano},  % author
+    pdfsubject={Data Science},   	% subject of the document
+    pdfcreator={},   				% creator of the document
+    pdfproducer={}, 				% producer of the document
+    pdfkeywords={} {} {} {}, 		% list of keywords
+    pdfnewwindow=true,      		% links in new window
+    colorlinks=true,       			% false: boxed links; true: colored links
+    linkcolor=black,          		% color of internal links (change box color with linkbordercolor), by default red
+    citecolor=black,        		% color of links to bibliography, by default green
+    filecolor=black,      			% color of file links, by default magenta
+    urlcolor=black           		% color of external links, by default cyan
 }
 
-\addbibresource{bib/biblatex.bib}
+%%%%%%% ToDo definitions 
+\usepackage[figcolor=white,textsize=footnotesize]{todonotes} % General definitions for the todonotes package
 
+\newcommand{\didit}[1]{\todo[color=red!40]{#1}} % for task to do completed
+
+\newcommand{\addref}{\todo[color=red!90]{[Missing cite]}} % for add a missing reference 
+\newcommand{\rewrite}[1]{\todo[color=green!40]{#1}} % for a word, sentence or paragraph that has to be rewritten
+
+\makeatletter
+\if@todonotes@disabled
+\newcommand{\hlfix}[2]{#1}
+\else
+\newcommand{\hlfix}[2]{\texthl{#1}\todo{#2}} % snippet to highlight a text that needs to be revised in case of doubt in the face of a possible error
+\fi
+\makeatother% 
+
+%%%%%%% Microtypographical detaisl definitions 
+
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+
+%%%%%%% Title page defintions
+
+\extratitle{Statistics for Data Science}
+\titlehead{\itshape Release:\\
+ \input{version}}
+\subject{}
+\title{Statistics for Data Science}
+%\subtitle{}
+\author{Ricardo Hortelano}
+\date{2019}
+%\publishers{}
+
+\uppertitleback{\small
+Copyright \copyright ~2019 Ricardo Hortelano.\\
+}
+
+\lowertitleback{{\small
+Permission is granted to copy, distribute, and/or modify this document under the terms of the Creative Commons Attribution-NonCommercial 3.0 Unported License, which is available at \url{http://creativecommons.org/licenses/by-nc/3.0/}.\\
+
+The original form of this book is \LaTeX\ source code.  Compiling this \LaTeX\ source has the effect of generating a device-independent representation of a textbook, which can be converted to other formats and printed.\\
+
+The \LaTeX\ source for this book is available from \url{https://github.com/RicardoHS/statistics-for-data-science-book/}}
+}
+\dedication{To my right thumb}
+
+%%%%%% End of the preamble and start of the document
 \begin{document}
+\frontmatter % In LaTeX classes to make books such as this, book or memoir, this statement is used to start the numeration in Romans of all material prior to the chapters. It has the advantage that it allows us to insert chapters that are added to the Table of Contents and are not numbered.
 
-\begin{titlepage}
-    \vspace*{\stretch{1.0}}
-    \begin{center}
-       \Large\textbf{Statistics for Data Science}\\
-       \large\textit{Ricardo Hortelano}\\
-       \textit{2019}\\
-       \vspace*{3\baselineskip}
-       \textit{Release:}\\
-       \textit{\input{version}}
-    \end{center}
-    \vspace*{\stretch{2.0}}
- \end{titlepage}
+\maketitle
 
-%%%%%%%%%%%%%%%%%%%%%% to remove before release
-\listoftodos
-%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 
-\chapter*{Preface}
-\input{chapters/preface}
+\listoftodos % Can be commented on once all issues have been solved
 
-\chapter*{Introduction}
-\input{chapters/introduction}
+\input{chapters/preface.tex}
+\input{chapters/introduction.tex}
 
-\chapter{Linear Algebra}
-\input{chapters/linear_algebra}
+\mainmatter % This statement indicates that we are going to start the chapters and restarts the counter to 1 and begins to enumerate in arabics.
 
-\chapter{Probability}
-\input{chapters/probability}
+\input{chapters/linear_algebra.tex}
+\input{chapters/probability.tex}
+\input{chapters/inference.tex}
+\end{document}
+\input{chapters/num_methods.tex}
 
-\chapter{Statistical Inference}
-\input{chapters/inference}
-
-\chapter{Numerical Methods}
-\input{chapters/num_methods}
+\backmatter % This statement serves the final material of the book as analytical indexes, onomastics, references, appendices and annexes. However, it doesn't modify the numbering of the pages.
 
 \appendix
-\chapter{Appendix}
-\input{chapters/appendix}
 
-\printbibliography
+\input{chapters/appendix.tex}
+
+%\printbibliography
 \end{document}
