@@ -1,0 +1,38 @@
+\section{Introduction}
+Regression modeling is a set of statistical tools that aims to model associations
+rules between variables. This models can be later use to predict new observations,
+system explanation, variable screening or parameter estimation.
+
+It's important to note the difference between correlation and regression. In correlation
+the relationship is not directional, so, it's interest is only on how they are mutually
+associated. In regression the interest come from how one variable respond to others.
+
+\section{Linear Regression}
+\subsection{Linear Regression Models}
+Problems where there is only one independent variable (regressor or covariate) is called 
+\textbf{simple linear regression model}. For these problems, the approach is to try to 
+estimate the mean values of a variable respect to other $\mathbb{E}[Y|x]$, more formally
+\begin{equation}
+    Y = \beta_0 + \beta_1 x + \epsilon
+\end{equation}
+where $\epsilon$ is an error term.//
+\missingfigure{simple linear regression problem, ex: birth rate/poverty index}
+
+A regression model that contains more than one regressor variable is called
+\textbf{multiple linear regression model}. The model is similar to the simple
+one, they have in common a \textbf{response variable} $Y$, an \textbf{intercept}
+$beta_0$ and an error term $\epsilon$. Contrary to the simple one, the multiple linear
+regression model has \textbf{more than one covariate or regressor}.
+\begin{gather*}
+    Y_1 = \beta_0 + \beta_1 x_{11} + \beta_2 x_{12} + \dots + \beta_k x_{1k} + \epsilon_1\\
+    Y_2 = \beta_0 + \beta_1 x_{21} + \beta_2 x_{22} + \dots + \beta_k x_{2k} + \epsilon_2\\
+    \vdots\\
+    Y_n = \beta_0 + \beta_1 x_{n1} + \beta_2 x_{n2} + \dots + \beta_k x_{nk} + \epsilon_n\\
+\end{gather*}
+
+\subsubsection{Matrix Formulation}
+The above model can be expressed in matrix equation (note the bold font):
+\begin{equation}
+    \bm{Y} = \bm{X}\bm{\beta} + \bm{\epsilon}
+\end{equation}
+
