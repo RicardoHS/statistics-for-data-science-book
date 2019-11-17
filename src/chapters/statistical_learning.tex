@@ -1,0 +1,93 @@
+\section{Introduction - Supervised Learning Framework}
+\todo[inline]{rewrite all this using all the content of the slides but without being a scheme}
+The usual framework used in machine learning is DGP (data generating process?)\todo{research about this}
+\begin{center}
+    Data = Model + Noise
+\end{center}
+
+or in a statistical point of view, we assume $g(x)$ as the true model of the data
+\begin{equation*}
+    y = g(x_1,\dots, x_k) + \text{Noise}
+\end{equation*}
+If we use this equation for a linear approximation
+\begin{align*}
+    \text{Statistical approach: }& y = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p + \epsilon\\
+    \text{Machine Learning approach: }& y = \text{map}(x_1,\dots,x_p) + \epsilon
+\end{align*}
+
+The two main categories of problems are named as, \textbf{classification and regression.}
+
+\subsection{Dimensionality Curse}
+\todo[inline]{write dimensionality curse problem}
+
+\subsection{Prediction Error}
+In predictive models there are three sources of uncertainty
+\begin{enumerate}
+    \item Estimation error: The error in the coefficients when the estimation is true.
+    \item Model Bias: The error in the linear approximation when the true model
+    is non-linear, or contains other variables.
+    \item Irreducible Error: The noise in the data.
+\end{enumerate}
+\begin{equation*}
+    (\text{Prediction Error}^2) = \sigma^2 + \text{Bias}^2 + \text{Var}
+\end{equation*}
+
+\subsubsection{Statistics}
+It focus on minimizing bias (by assuming knowledge of the population). By doing
+so, it is able to get formulas for the Var that provides explanation. The Var can be large in practice.
+
+\subsubsection{Machine Learning}
+It focus on minimizing $\text{Bias}^2 + \text{Var}$. No assumptions needed,
+hence no formulas and no direct explanation. Best predictive performance.
+
+\missingfigure{bias vs variance image}
+
+\subsubsection{Overfitting}
+\todo[inline]{write this}
+\missingfigure{example plot of a training showing the diverge between train and test loss}
+
+\subsection{Classification Problems}
+\todo[inline]{write extensively about this}
+
+Some well-know statistical classification models are:
+\begin{enumerate}
+    \item Logistic regression
+    \item Bayes classifiers
+    \begin{enumerate}
+        \item LDA
+        \item QDA
+        \item Naive Bayes
+        \item Shrinkage classication
+    \end{enumerate}
+\end{enumerate}
+
+Some well-know machine learning classification models are:
+\begin{enumerate}
+    \item Nearest Neighbors
+    \item Neural Networks
+    \item Support Vector Machines
+    \item Decision Trees, Random Forest, Gradient Boosting
+\end{enumerate}
+
+\section{Probabilistic Learning}
+This approach aims to first predict the probability of a observation to belong
+to all categories. Later, select the most probable to set the category.
+
+They are two main families:
+\begin{enumerate}
+    \item Bayes Classifiers
+    \item Logistic Regression
+\end{enumerate}
+
+\subsection{Bayes CLassifiers}
+Given the predictors $y | x_1,\dots,x_p$ focus on the conditional probability $p(y | x_1,\dots,x_p)$.
+
+In the bayes approach,  this is modeled in an indirect way:
+\begin{enumerate}
+    \item First model the predictors $X$ separately for each given class $y$: $p(x|y)$
+    \item Second, apply the bayes formula to get $p(y|x)$ 
+\end{enumerate}
+
+This approach is more stable than logistic regression when the classes are well
+separated. It performs well when the variables are gaussian distributed.
+
