@@ -98,6 +98,11 @@ line. Also, it's computational less expensive than other approaches.
     sample mean of $X$ and $Y$. $S_x^2$ is the sample variance of $X$. $S_{xy}$ is the sample covariate between $X$ and $Y$.
 \end{tcolorbox}
 
+The Least Squares method does not make any assumptions about the distribution
+of the response. Although this might be a good thing, it has the drawback that
+does not allow us to make any inference on the estimated parameters, and
+therefore, on the predictions.
+
 \subsubsection{Matrix Form}
 The least squares for multiple linear regression can be denoted 
 \begin{equation}
@@ -120,10 +125,10 @@ setting the equation to zero, we obtain
 \end{equation*}
 Once the parameters are estimated we obtain
 \begin{equation}
-    \bm{\hat{Y}} = \dots = \bm{HY}
+    \bm{\hat{Y}} = \bm{X(X'X)^{-1}X'Y} = \bm{HY}
 \end{equation}
 \begin{equation}
-    \bm{\hat{\epsilon}} = \bm{(I-H)Y}
+    \bm{\hat{\epsilon}} = \bm{Y-\hat{Y}} = \bm{(I-H)Y}
 \end{equation}
 where $\bm{H}$ is called the \textit{Hat Matrix} and what it does is to project $\bm{Y}$ into the regression hyperplane.
 \end{tcolorbox}
@@ -141,3 +146,87 @@ where $\bm{H}$ is called the \textit{Hat Matrix} and what it does is to project 
 \end{itemize}
 
 \subsection{Maximum Likelihood}
+In maximum likelihood estimation, we search over all possible sets of parameter
+values for a specified model to find the set of values for which the observed
+sample was most likely. That is, we find the set of parameter values that, given
+a model, were most likely to have given us the data that we have in hand.
+\begin{equation}
+    \ln \mathcal{L}(\bm{\beta, \sigma^2|X}) = \dots \propto -\frac{n}{2}\ln(\sigma^2)-\frac{\bm{(Y-X\beta)'(Y-X\beta)}}{2\sigma^2}
+\end{equation}
+Minimizing $\ln \mathcal{L}(\bm{\beta, \sigma^2|X})$ is equivalent to minimizing
+least squares because the only element of the equation that depends on $\bm{\beta}$
+is $\bm{(Y-X\beta)'(Y-X\beta)}$.
+
+\subsubsection{Estimation of $\sigma^2$}
+Using ML we can estimate $\sigma^2$. The unbiased estimator is,
+\begin{equation}
+    \hat{\sigma}^2 = \frac{\bm{(Y-X\beta)'(Y-X\beta)}}{n-(k+1)}
+\end{equation}
+where $k+1$ is the number of estimated parameters.
+
+\subsubsection{Degrees of freedom}
+The degrees of freedom is the number of independent pieces of information in a sample. Here,
+since we use $k+1$ parameters to estimate, the number of remaining parameters we can use
+to estimate $\sigma^2$ will be $n-(k+1)$.
+
+\subsubsection{Interpretation of the coefficients}
+The interpretation of a multivariate regression coefficient is the expected
+change in the response per unit change in the regressor, holding all of the other
+regressors fixed. The latter part of the phrase is important,by holding the
+other regressors constant, we are investigating an adjusted effect.
+
+\subsection{Inference of model parameters}
+\subsubsection{Sampling distribution of estimated coefficients}
+\begin{equation}
+    \mathcal{E}[\hat{\beta}] = \bm{\beta}
+\end{equation}
+\begin{equation}
+    \text{Var}[\hat{beta}] = \sigma^2 (\bm{X'X})^{-1}
+\end{equation}
+
+We can conclude that, the smaller the variance of the error, the larger the
+sample size and the variability of the predictor, the more precise the estimates
+are.
+
+\subsubsection{Confidence intervals}
+It is given by,
+\begin{equation}
+    \frac{\hat{\beta}_{j}-\beta_{j}}{\hat{\sigma} \sqrt{v_{j j}}} \sim t_{n-k-1}
+\end{equation}
+thus,
+\begin{equation}
+    CI_{(1-\alpha)}\left(\beta_{j}\right)=\left[\hat{\beta}_{j}-t_{1-\alpha / 2} ; n-k-1 \hat{\sigma} \sqrt{v_{j j}},\;\;\;
+     \hat{\beta}_{j}+t_{1-\alpha / 2 ; n-k-1} \hat{\sigma} \sqrt{v_{j j}}\right]
+\end{equation}
+where $v_{ii}$ is the i-th element of the diagonal of $\bm{(X'X)^{-1}}$.
+
+\subsubsection{Hypothesis Test}
+\begin{equation}
+    H_0: \beta_j = 0 \;\;\;\;\; H_1: \beta_j \neq 0
+\end{equation}
+
+In fact, what we are testing is whether the relationship between $\bm{X}_i$ and
+$\bm{Y}$ is linear or not.
+
+\subsection{ANOVA}
+Anova test the variance of the estimators and the data. A way to think about
+regression is in the decomposition of variability of our response.
+
+The total variability in our response is the variability around an intercept. This
+is also the variance estimate from a model with only an intercept:
+\begin{equation}
+    \text{Total variability} = \text{SST} = \sum_{i=1}^n (Y_i - \bm{\bar{Y}})^2
+\end{equation}
+The regression variability is the variability that is explained by adding the predictors.
+\begin{equation}
+    \text{Regression variability} = \text{SSR} = \sum_{i=1}^n (\hat{Y}_i - \bm{\bar{Y}})^2
+\end{equation}
+The residual variability is what is leftover around the regression line
+\begin{equation}
+    \text{Residual variability} = \text{SSE} = \sum_{i=1}^n (Y_i - \bm{\hat{Y}_i})^2
+\end{equation}
+
+\includegraphics[scale=0.5]{anova_parts}
+
+\todo[inline]{complete this}
+
