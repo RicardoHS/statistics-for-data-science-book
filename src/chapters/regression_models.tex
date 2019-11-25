@@ -220,10 +220,13 @@ is also the variance estimate from a model with only an intercept:
     \text{Total variability} = \text{SST} = \sum_{i=1}^n (Y_i - \bm{\bar{Y}})^2
 \end{equation}
 The regression variability is the variability that is explained by adding the predictors.
+The regression variability will be small if the predicted line is almost plane, and large if 
+the slope of the estimator is large.
 \begin{equation}
     \text{Regression variability} = \text{SSR} = \sum_{i=1}^n (\hat{Y}_i - \bm{\bar{Y}})^2
 \end{equation}
-The residual variability is what is leftover around the regression line
+The residual variability is what is leftover around the regression line. This value will be 
+large if the points are far from the predicted line and small if they are close.
 \begin{equation}
     \text{Residual variability} = \text{SSE} = \sum_{i=1}^n (Y_i - \bm{\hat{Y}_i})^2
 \end{equation}
