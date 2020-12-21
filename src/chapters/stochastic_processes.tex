@@ -1,0 +1,51 @@
+\section{Introduction}
+A stochastic process $\bm{X}=\{X_t, t\in T\}$is a collection of random variables
+in the same probabilistic space $(\Omega, \bm{\mathcal{A}}, P)$. Thus, for each
+$t$ in the index set $T$, $X_t$ is random variable $X_t: \Omega\rightarrow S$,
+where $S$ is the state space.
+
+In this enviroment, an individual realization of the process is called a
+trajectory, $\bm{X}(\omega) = \{ X_t(\omega), t \in T \}$.
+
+\begin{itemize}
+    \item If $T$ is countable, it is said to be a discrete-time stochastic
+    process.
+    \item If $T$ is uncountable, it is said to be a continuous-time stochastic
+    process.
+    \item If $S$ is countable, it is said to be a stochastic process with
+    discrete state space.
+    \item If $S$ is uncountable, it is said to be a stochastic process with
+    continuous state space.
+\end{itemize}
+
+\subsection{Elements}
+\begin{itemize}
+    \item The mean function is $\mathbb{E}[X_t]$.
+    \item The covariance function is $\gamma(s,t) = \text{Cov}(X_s,X_t),\;\;\;
+    s,t \in T$
+\end{itemize}
+
+\subsection{Stationary Stochastic Process}
+A s.p. is \textbf{weakly stationary} if:
+\begin{itemize}
+    \item The expectation is constant, $\mathbb{E}[X_t] = \mathbb{E}[X_s],
+    \forall s,t \in T$
+    \item The covariance only depends on the lag, $\gamma(s,t) =
+    \overset{\sim}{\gamma}(t-s), \forall s,t \in T$
+\end{itemize} 
+
+A s.p is \textbf{strong stationary} if $(X_{t_1},X_{t_2},\dots,X_{t_n})$ and
+$(X_{t_1+s},X_{t_2+s},\dots,X_{t_n+s})$ are identically distributed.
+
+A strong stationary process is also a weakly stationary one. The opposite is
+(not necessarily?) true.
+
+\section{Discrete-time Markov Chains}
+With $S$ being a countable set, a discrete-time Markov chain is a sequence of
+random variables $\bm{X}=\{X_1,X_2,\dots\}$ that takes values in $S$ with the
+property
+\begin{equation}
+    P(X_n=j|X_0=x_0, X_1=x_1,\dots,X_{n-1}=i) = P(X_n=j|X_{n-1}=i),\;\;\;\; \forall i,j,x_0,x_{n-2} \in S
+\end{equation}
+This property is know as the \textbf{markov property}. The index set
+$T={0,1,2,\dots}$.
