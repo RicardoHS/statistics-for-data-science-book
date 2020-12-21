@@ -1,0 +1,60 @@
+\section{Multidimensional Datasets}
+
+\subsection{Graphs}
+For single quantitative variable
+\begin{enumerate}
+    \item Barplot
+    \item Boxplot
+    \item Histogram
+    \item Kernel Density
+\end{enumerate}
+\todo[inline]{add plots and explanation of how kernel denstity works (gaussian kernel)}
+
+For multiple quantitative variables:
+\begin{enumerate}
+    \item Scatterplots (single 2D, single 3D or matrix)
+    \item Parallel Coordinate
+    \item Andrews plot
+\end{enumerate}
+\todo[inline]{add example plots and clarification of (how works, when are usefull) for all of them}
+
+\subsection{Descriptive Measurements}
+Some plots have lack of information when concerning the whole data. To overcome
+this, some measurements can be done.
+
+For single variables:
+\begin{itemize}
+    \item Sample Mean 
+    \item Sample Variance
+    \item Sample Standard deviation 
+    \item Sample Covariance (with standardized variables or not)
+    \item Sample Correlation (with standardized variables or not)
+\end{itemize}
+\missingfigure{examples of correlation between two variables}
+
+For data matrices:
+\begin{itemize}
+    \item Sample Mean Vector
+    \begin{align}
+        \hat{x} &= \begin{bmatrix}
+               \hat{x}_{1} \\
+               \hat{x}_{2} \\
+               \vdots \\
+               \hat{x}_{p}
+             \end{bmatrix} = \frac{1}{n}X'1_n
+      \end{align}
+      \item Sample Covariance Matrix (sample Covariance matrix of y?)\todo{investigate this}
+      \item Shrinkage sample covariance matrix
+\end{itemize}
+
+\subsubsection{Eigenvalues of the covariance matrix analysis}
+\todo[inline]{write this}
+
+\subsubsection{Shrinkage sample covariance matrix}
+\begin{equation}
+    \overset{\sim}{S}_x = (1-\lambda)S_x + \lambda I_p
+\end{equation}
+\todo[inline]{write this}
+
+
+
