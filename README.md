@@ -7,7 +7,7 @@ An open source book.
 > **_NOTE:_**  The content format (text book) is deprecated and no more content will be added. All content will be migrated to a blog format [link](https://ricardohs.github.io/)
 
 [Link to last PDF
-available](https://github.com/RicardoHS/statistics-for-data-science-book/releases/latest/download/main.pdf)
+available](src/main.pdf)
 
 ## Book Versions
 In order to allow online references (in forums, blogs, etc) all pdf releases
