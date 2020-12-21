@@ -2,7 +2,9 @@
 Status](https://travis-ci.com/RicardoHS/statistics-for-data-science-book.svg?branch=master)](https://travis-ci.com/RicardoHS/statistics-for-data-science-book)
 
 # Statistics for Data Science
-An open source book
+An open source book.
+
+> **_NOTE:_**  The content format (text book) is deprecated and no more content will be added. All content will be migrated to a blog format [link](https://ricardohs.github.io/)
 
 [Link to last PDF
 available](https://github.com/RicardoHS/statistics-for-data-science-book/releases/latest/download/main.pdf)
